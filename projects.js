@@ -545,7 +545,7 @@ const projects = [
     categories: ["degree"],
     title: "Cuestión de Piños",
     subtitle: "Narrative-driven video game in virtual reality",
-    image: "assets/pinos.png",
+    image: "assets/cdp.png",
     description:
       `<b>Cuestión de Piños</b> is a multi-perspective VR game following the handsome but self-conscious Mario Trespiños in his search for love. 
       Experience his story across three chapters, each played through a different character's eyes.
