@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ABOUT ME -->
+  <section class="section" id="about">
+    <h2>About me</h2>
+    <p>
+      I'm Carlos Escribano, a video game developer holding a degree in Video Game Design and Development
+      and a master's degree in Computer Graphics, Games, and Virtual Reality, both from Rey Juan Carlos
+      University in Madrid. I create video games and projects, ranging from academic work to Game Jam
+      entries, actively contributing to both narrative design and programming. I have extensive experience
+      with Unity, having developed 2D and 3D projects for multiple platforms, including the creation of
+      specialized tools and their commercialization on the Unity Asset Store.
+    </p>
+    <p>I hope you enjoy my projects!</p>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section" id="featured">
+    <h2>Featured projects</h2>
+    <div class="project-grid" id="featured-grid">
+    </div>
+  </section>
+
+   <!-- MASTER PROJECTS -->
+  <section class="section" id="master">
+    <h2>Master projects</h2>
+    <div class="project-grid" id="master-grid">
+    </div>
+  </section>
+
+  <!-- JAMS PROJECTS -->
+  <section class="section" id="jams">
+    <h2>Game jam projects</h2>
+    <div class="project-grid" id="jams-grid">
+    </div>
+  </section>
+
+  <!-- DEGREE PROJECTS -->
+  <section class="section" id="degree">
+    <h2>Degree projects</h2>
+    <div class="project-grid" id="degree-grid">
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>My socials</h2>
+    <div class="contact-list">
+      <a target="_blank" href="https://www.linkedin.com/in/carlos-escribano-gonz%C3%A1lez-bb58293a1/">
+        <img src="assets/LinkedIn.png" alt="LinkedIn">
+      </a>
+      <a target="_blank" href="https://karesito.itch.io/">
+        <img src="assets/Itch.io.png" alt="Itch.io">
+      </a>
+      <a target="_blank" href="https://github.com/CarlosEscribanoGonzalez?tab=repositories">
+        <img src="assets/github.png" alt="GitHub">
+      </a>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="project-modal" hidden data-modal-close>
+    <div class="modal-box">
+      <button class="modal-close" data-modal-close aria-label="Close">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-subtitle"></p>
+      <img id="modal-image" src="" alt="">
+      <p id="modal-description"></p>
+      <ul id="modal-details"></ul>
+      <button id="modal-link"></button>
+      <button id="modal-secondary-link"></button>
+    </div>
+  </div>
+
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
