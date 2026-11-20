@@ -17,8 +17,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://typtyp-studios.itch.io/mechanoccult",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://typtyp-studios.itch.io/mechanoccult" }
+    ],
   },
   {
     id: "la-cacharrera",
@@ -40,8 +41,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/la-cacharrera",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/la-cacharrera" }
+    ],
   },
   {
     id: "patterns",
@@ -63,8 +65,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/patterns",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/patterns" }
+    ],
   },
   {
     id: "artabletop",
@@ -91,8 +94,9 @@ const projects = [
       Platform: "Android",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/artabletop",
-    linkLabel: "Download",
+    links: [
+      { label: "Download", url: "https://karesito.itch.io/artabletop" }
+    ],
   },
   {
     id: "rendering-techniques",
@@ -118,8 +122,9 @@ const projects = [
       "Release Date": "May 20, 2026",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Rendering-Techniques-in-Vulkan",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Techniques-in-Vulkan" }
+    ],
   },
   {
     id: "opengl-engine",
@@ -143,8 +148,9 @@ const projects = [
       "Release Date": "January 01, 2026",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Rendering-Engine",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Engine" }
+    ],
   },
 
   //MASTER
@@ -169,8 +175,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Graphics-Pipeline-Stages-in-Unity",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Graphics-Pipeline-Stages-in-Unity" }
+    ],
   },
   {
     id: "path-tracer",
@@ -186,8 +193,9 @@ const projects = [
       "Release Date": "March 24, 2026",
       Platform: "PC",
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Nori-Path-Tracer",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Nori-Path-Tracer" }
+    ],
   },
   {
     id: "fluid-simulation",
@@ -203,8 +211,9 @@ const projects = [
       "Release Date": "March 29, 2026",
       Platform: "PC",
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation" }
+    ],
   },
   {
     id: "box-filtering",
@@ -220,8 +229,9 @@ const projects = [
       "Release Date": "April 27, 2026",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA" }
+    ],
   },
   {
     id: "cloth-simulation",
@@ -238,8 +248,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Mass-Spring-Cloth-Simulation",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Mass-Spring-Cloth-Simulation" }
+    ],
   },
   {
     id: "articulated-rb",
@@ -261,8 +272,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Articulated-Rigid-Bodies-in-Unity",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Articulated-Rigid-Bodies-in-Unity" }
+    ],
   },
   {
     id: "algorithms-meshes",
@@ -278,8 +290,9 @@ const projects = [
       "Release Date": "October 22, 2025",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Algorithms-with-meshes",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Algorithms-with-meshes" }
+    ],
   },
   {
     id: "warping-morphing",
@@ -299,8 +312,9 @@ const projects = [
       "Release Date": "December 02, 2025",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Warping-Morphing",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Warping-Morphing" }
+    ],
   },
   {
     id: "inverse-kinematics",
@@ -317,8 +331,9 @@ const projects = [
       "Release Date": "December 18, 2026",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Inverse-Kinematics",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Inverse-Kinematics" }
+    ],
   },
   {
     id: "emoji-classifier",
@@ -336,8 +351,9 @@ const projects = [
       "Release Date": "November 25, 2025",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Emoji-Classification-CNN",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Emoji-Classification-CNN" }
+    ],
   },
   {
     id: "tracking-stereoscopy",
@@ -354,8 +370,9 @@ const projects = [
       "Release Date": "November 30, 2025",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy" }
+    ],
   },
   {
     id: "tonemapping-cuda",
@@ -370,8 +387,9 @@ const projects = [
       "Release Date": "April 13, 2026",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA" }
+    ],
   },
 
   //JAMS:
@@ -390,8 +408,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/the-other-side",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/the-other-side" }
+    ],
   },
   {
     id: "regrets-and-complaints",
@@ -409,8 +428,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/regrets-n-complaints",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/regrets-n-complaints" }
+    ],
   },
   {
     id: "kuko",
@@ -428,8 +448,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/kuko",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/kuko" }
+    ],
   },
   {
     id: "julian",
@@ -447,8 +468,9 @@ const projects = [
       Platform: "PC",
       Engine: "Adventure Game Studio"
     },
-    link: "https://guajiro0.itch.io/julian",
-    linkLabel: "Play",
+    links: [
+      { label: "View on GitHub", url: "https://guajiro0.itch.io/julian" }
+    ],
   },
 
   //DEGREE
@@ -470,8 +492,9 @@ const projects = [
       Platform: "Web (PC & Mobile)",
       Engine: "Unity"
     },
-    link: "https://flatwall-games.itch.io/kocube",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://flatwall-games.itch.io/kocube" }
+    ],
   },
   {
     id: "indie-studio",
@@ -491,8 +514,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://flatwall-games.itch.io/indie-studio-simulator",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://flatwall-games.itch.io/indie-studio-simulator" }
+    ],
   },
   {
     id: "tinpct",
@@ -509,10 +533,10 @@ const projects = [
       Platform: "PC (browser)",
       Frameworks: "Phaser, Spring Boot"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Trouble-in-NPC-Town",
-    linkLabel: "View on GitHub (online version)",
-    secondaryLink: "https://karesito.itch.io/trouble-in-npc-town",
-    secondaryLinkLabel: "Play on Itch.io (offline version)",
+    links: [
+      { label: "View on GitHub (online version)", url: "https://github.com/CarlosEscribanoGonzalez/Trouble-in-NPC-Town" },
+      { label: "Play on Itch.io (offline version)", url: "https://karesito.itch.io/trouble-in-npc-town" }
+    ],
   },
   {
     id: "cuestion-de-pinos",
@@ -531,8 +555,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/cuestin-de-pinos",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/cuestin-de-pinos" }
+    ],
   },
     {
     id: "skyline-express",
@@ -554,8 +579,9 @@ const projects = [
       Platform: "Android",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/skyline-express-totally-accurate-and-reliable-flying-train-service-simulator",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/skyline-express-totally-accurate-and-reliable-flying-train-service-simulator" }
+    ],
   },
   {
     id: "missile-rally",
@@ -575,8 +601,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://karesito.itch.io/missile-rally",
-    linkLabel: "Play",
+    links: [
+      { label: "Play", url: "https://karesito.itch.io/missile-rally" }
+    ],
   },
   {
     id: "pathfinding",
@@ -595,8 +622,9 @@ const projects = [
       Platform: "PC",
       Engine: "Unity"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Pathfinding-and-Q-Learning",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Pathfinding-and-Q-Learning" }
+    ],
   },
   {
     id: "space-invaders",
@@ -612,8 +640,9 @@ const projects = [
       "Release Date": "November 23, 2022",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Space-Invaders-in-Own-Game-Engine",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Space-Invaders-in-Own-Game-Engine" }
+    ],
   },
   {
     id: "gameoflife",
@@ -628,8 +657,9 @@ const projects = [
       "Release Date": "December 03, 2022",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
+    ],
   },
   {
     id: "arkanoid",
@@ -644,8 +674,9 @@ const projects = [
       "Release Date": "May 23, 2023",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Arkanoid-in-Assembly",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Arkanoid-in-Assembly" }
+    ],
   },
   {
     id: "bingo",
@@ -667,8 +698,9 @@ const projects = [
       "Release Date": "June 15, 2022",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Bingo-Simulator",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Bingo-Simulator" }
+    ],
   },
   {
     id: "processing",
@@ -684,68 +716,8 @@ const projects = [
       "Release Date": "December 12, 2021",
       Platform: "PC"
     },
-    link: "https://github.com/CarlosEscribanoGonzalez/Physics-in-Processing",
-    linkLabel: "View on GitHub",
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Physics-in-Processing" }
+    ],
   },
-//  {
-//    id: "heat-hopes",
-//    categories: ["degree"],
-//    title: "Heat & Hopes",
-//    subtitle: "Space-themed platformer focused on usability and accessibility",
-//    description:
-//      `<b>Heat & Hopes</b> is a space-themed platformer developed in Unity. Its main goal was to focus on usability and
-//      accessibility, creating a game with an understandable and intuitive UI that includes various adaptability options,
-//      as dyslexia and language settings and color blindness filters.`,
-//    details: {
-//      Language: "Spanish, English",
-//      Genre: "Platformer",
-//      "Release Date": "December 18, 2023",
-//      Platform: "PC",
-//      Engine: "Unity"
-//    },
-//    link: "https://karesito.itch.io/heat-hopes",
-//    linkLabel: "Play",
-//  },
-//  {
-//    id: "phantom-realm",
-//    categories: ["degree"],
-//    title: "Phantom Realm",
-//    subtitle: "My very first 3D video game in Unity",
-//    description:
-//      `<b>Phantom Realm</b> is a zombie first person shooter featuring four different weapons, health and ammo management, 
-//      various enemy types and three unique maps. 
-//      <br><br>The purpuse of this project was to create a software product using agile methodologies, 
-//      specifically <i>Scrum</i>. Developing a polished game wasn't a requirement; the main goal was to complete tasks that demonstrated proper 
-//      team organization. As a result, this game lacks significant content and is far from being a finished product.`,
-//    details: {
-//      Language: "Spanish",
-//      Genre: "First Person Shooter",
-//      "Release Date": "May 15, 2023",
-//      Platform: "PC",
-//      Engine: "Unity"
-//    },
-//    link: "https://karesito.itch.io/phantom-realm",
-//    linkLabel: "Play",
-//  },
-//  {
-//    id: "pokemon",
-//    categories: ["degree"],
-//    title: "Pokemon Fan-Made Game",
-//    subtitle: "My very first video game",
-//    description:
-//      `This is an unofficial Pokemon game developed in Adventure Game Studio during my first year of university, 
-//      for the course on <b>Narrative, Scriptwritting and Storyboarding</b>.
-//      <br><br>
-//      The main objective of this project was to write a script based on an existing fictional universe, 
-//      and later develop a simple demo on AGS engine.`,
-//    details: {
-//      Language: "Spanish",
-//      Genre: "Graphic Adventure",
-//      "Release Date": "December 16, 2021",
-//      Platform: "PC",
-//      Engine: "Adventure Game Studio"
-//    },
-//    link: "https://karesito.itch.io/pokemon-fan-made-game",
-//    linkLabel: "Play",
-//  },
 ];

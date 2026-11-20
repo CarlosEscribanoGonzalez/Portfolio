@@ -93,14 +93,17 @@ async function openProjectModal(projectId) {
     .map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`)
     .join("");
 
-  const linkBtn = document.getElementById("modal-link");
-  if (p.link) {
-    linkBtn.style.display = "";
-    linkBtn.textContent = p.linkLabel || "View";
-    linkBtn.onclick = () => window.open(p.link, "_blank");
-  } else {
-    linkBtn.style.display = "none";
-  }
+  const linksBox = document.getElementById("modal-links");
+  linksBox.innerHTML = "";
+  p.links.filter((l) => l.url).forEach((l) => {
+    const a = document.createElement("a");
+    a.className = "modal-link-btn";
+    a.href = l.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = l.label || "View";
+    linksBox.appendChild(a);
+  });
 
   modal.hidden = false;
   document.body.classList.add("modal-open");

@@ -48,6 +48,20 @@ body { margin: 0; font-family: sans-serif; }
   cursor: pointer; background: none; border: none; font-size: 1.4em;
 }
 
+.modal-links { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 12px; 
+  margin-top: 16px; 
+}
+
+.modal-link-btn { 
+  padding: 8px 16px; 
+  border: 1px solid currentColor; 
+  text-decoration: none; 
+  color: inherit; 
+}
+
 #modal-image { width: 100%; display: block; margin: 16px 0; }
 #modal-details { padding-left: 18px; }
 
