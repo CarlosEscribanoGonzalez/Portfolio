@@ -36,10 +36,41 @@ let openToken = 0;
 
 function showGalleryImage(i) {
   if (gallery.urls.length === 0) return;
-  gallery.index = (i + gallery.urls.length) % gallery.urls.length;
-  document.getElementById("modal-image").src = gallery.urls[gallery.index];
-  document.getElementById("gallery-counter").textContent =
-    `${gallery.index + 1} / ${gallery.urls.length}`;
+  const n = gallery.urls.length;
+  gallery.index = (i + n) % n;
+  setModalImage(gallery.urls[gallery.index]);
+  document.getElementById("gallery-counter").textContent = `${gallery.index + 1} / ${n}`;
+  [gallery.index + 1, gallery.index - 1].forEach((j) => {
+    new Image().src = gallery.urls[(j + n) % n];
+  });
+}
+
+let imgToken = 0;
+function setModalImage(url) {
+  const img = document.getElementById("modal-image");
+  const gal = document.querySelector(".gallery");
+  const token = ++imgToken;
+
+  if (!url) {
+    img.removeAttribute("src");
+    gal.classList.add("loading");
+    return;
+  }
+
+  const loader = new Image();
+  loader.src = url;
+  if (loader.complete) { 
+    img.src = url;
+    gal.classList.remove("loading");
+    return;
+  }
+
+  gal.classList.add("loading");
+  loader.onload = loader.onerror = () => {
+    if (token !== imgToken) return;
+    img.src = url;
+    gal.classList.remove("loading");
+  };
 }
 
 function renderSection(containerId, category) {
@@ -104,6 +135,12 @@ async function openProjectModal(projectId) {
     a.textContent = l.label || "View";
     linksBox.appendChild(a);
   });
+
+  const thumb = document.querySelector(`[data-project-id="${projectId}"] .project-thumb`);
+  gallery = { urls: [], index: 0 };
+  document.getElementById("gallery-counter").textContent = "";
+  document.querySelector(".gallery").classList.add("single");
+  setModalImage(thumb && thumb.src ? thumb.src : null);
 
   modal.hidden = false;
   document.body.classList.add("modal-open");

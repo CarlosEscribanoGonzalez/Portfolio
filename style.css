@@ -78,5 +78,17 @@ body.modal-open { overflow: hidden; }
 .gallery-nav.prev { left: 8px; }
 .gallery-nav.next { right: 8px; }
 .gallery.single .gallery-nav { display: none; }
+.gallery.loading #modal-image { opacity: 0; }   /* oculta la imagen anterior */
+.gallery.loading::after {
+  content: "";
+  position: absolute; top: 50%; left: 50%;
+  width: 36px; height: 36px; margin: -18px 0 0 -18px;
+  border: 3px solid rgba(128, 128, 128, 0.3);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: gallery-spin 0.8s linear infinite;
+  pointer-events: none;
+}
+@keyframes gallery-spin { to { transform: rotate(360deg); } }
 
 #gallery-counter { text-align: center; font-size: 0.85em; color: #666; }
