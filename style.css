@@ -52,3 +52,17 @@ body { margin: 0; font-family: sans-serif; }
 #modal-details { padding-left: 18px; }
 
 body.modal-open { overflow: hidden; }
+
+.gallery { position: relative; margin: 16px 0; }
+#modal-image { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; display: block; }
+
+.gallery-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); color: #fff; border: none;
+  width: 40px; height: 56px; cursor: pointer; font-size: 1.2em;
+}
+.gallery-nav.prev { left: 8px; }
+.gallery-nav.next { right: 8px; }
+.gallery.single .gallery-nav { display: none; }
+
+#gallery-counter { text-align: center; font-size: 0.85em; color: #666; }

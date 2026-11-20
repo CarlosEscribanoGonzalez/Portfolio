@@ -1,3 +1,47 @@
+const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "gif"];
+const folderOf = (p) => `assets/${p.id}`;
+
+function probeImage(basePath) {
+  return new Promise((resolve) => {
+    let i = 0;
+    const tryNext = () => {
+      if (i >= IMAGE_EXTENSIONS.length) return resolve(null);
+      const url = `${basePath}.${IMAGE_EXTENSIONS[i++]}`;
+      const img = new Image();
+      img.onload = () => resolve(url);
+      img.onerror = tryNext;
+      img.src = url;
+    };
+    tryNext();
+  });
+}
+
+const galleryCache = {};
+async function loadGallery(project) {
+  if (galleryCache[project.id]) return galleryCache[project.id];
+  const folder = folderOf(project);
+  const urls = [];
+  const cover = await probeImage(`${folder}/cover`);
+  if (cover) urls.push(cover);
+  for (let n = 1; ; n++) {
+    const url = await probeImage(`${folder}/${n}`);
+    if (!url) break;
+    urls.push(url);
+  }
+  return (galleryCache[project.id] = urls);
+}
+
+let gallery = { urls: [], index: 0 };
+let openToken = 0;
+
+function showGalleryImage(i) {
+  if (gallery.urls.length === 0) return;
+  gallery.index = (i + gallery.urls.length) % gallery.urls.length;
+  document.getElementById("modal-image").src = gallery.urls[gallery.index];
+  document.getElementById("gallery-counter").textContent =
+    `${gallery.index + 1} / ${gallery.urls.length}`;
+}
+
 function renderSection(containerId, category) {
   const container = document.getElementById(containerId);
   if (!container) {
@@ -16,28 +60,33 @@ function renderSection(containerId, category) {
     .map(
       (p) => `
       <div class="project-card" data-project-id="${p.id}">
-        <img class="project-thumb" src="${p.image}" alt="${p.title}">
+        <img class="project-thumb" data-folder="${folderOf(p)}" alt="${p.title}">
         <div class="project-caption">
           <div class="project-title">${p.title}</div>
           <div class="project-subtitle">${p.subtitle}</div>
         </div>
       </div>
-    `
+      `
     )
     .join("");
+
+  container.querySelectorAll(".project-thumb").forEach(async (img) => {
+    const url = await probeImage(`${img.dataset.folder}/cover`);
+    if (url) img.src = url;
+  });
 }
 
-function openProjectModal(projectId) {
+async function openProjectModal(projectId) {
   const p = projects.find((proj) => proj.id === projectId);
   if (!p) return;
 
+  const myToken = ++openToken;
   const modal = document.getElementById("project-modal");
 
   document.getElementById("modal-title").textContent = p.title;
   document.getElementById("modal-subtitle").textContent = p.subtitle;
-  document.getElementById("modal-image").src = p.image;
-  document.getElementById("modal-image").alt = p.title;
   document.getElementById("modal-description").innerHTML = p.description;
+  document.getElementById("modal-image").alt = p.title;
 
   const detailsList = document.getElementById("modal-details");
   detailsList.innerHTML = Object.entries(p.details || {})
@@ -53,22 +102,20 @@ function openProjectModal(projectId) {
     linkBtn.style.display = "none";
   }
 
-  const linkBtn2 = document.getElementById("modal-secondary-link");
-  if (p.secondaryLink) {
-    linkBtn2.style.display = "";
-    linkBtn2.textContent = p.secondaryLinkLabel || "View";
-    linkBtn2.onclick = () => window.open(p.secondaryLink, "_blank");
-  } else {
-    linkBtn2.style.display = "none";
-  }
-
   modal.hidden = false;
   document.body.classList.add("modal-open");
+
+  const urls = await loadGallery(p);
+  if (myToken !== openToken) return;
+  gallery = { urls, index: 0 };
+  document.querySelector(".gallery").classList.toggle("single", urls.length <= 1);
+  showGalleryImage(0);
 }
 
 function closeProjectModal() {
   document.getElementById("project-modal").hidden = true;
   document.body.classList.remove("modal-open");
+  openToken++;
 }
 
 document.addEventListener("click", (e) => {
@@ -83,8 +130,14 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
+  const modalOpen = !document.getElementById("project-modal").hidden;
   if (e.key === "Escape") closeProjectModal();
+  if (modalOpen && e.key === "ArrowLeft")  showGalleryImage(gallery.index - 1);
+  if (modalOpen && e.key === "ArrowRight") showGalleryImage(gallery.index + 1);
 });
+
+document.getElementById("gallery-prev").addEventListener("click", () => showGalleryImage(gallery.index - 1));
+document.getElementById("gallery-next").addEventListener("click", () => showGalleryImage(gallery.index + 1));
 
 //Sections:
 renderSection("featured-grid", "featured");

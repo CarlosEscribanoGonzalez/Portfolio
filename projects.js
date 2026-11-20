@@ -4,7 +4,6 @@ const projects = [
     categories: ["featured"],
     title: "Mechanoccult",
     subtitle: "Typing & Deckbuilding PVP game",
-    image: "assets/mechanoccult.png",
     description:
       `<b>Mechanoccult</b> is a competitive 1v1 typing game with deckbuilding mechanics. 
       Play as a cultist attempting to summon your deity before your opponent. <br><br> 
@@ -14,7 +13,6 @@ const projects = [
     details: {
       Languages: "English",
       Genre: "Competitive Typing, Deck-Builder",
-      "Release Date": "May 11, 2026",
       Status: "In active development",
       Platform: "PC",
       Engine: "Unity"
@@ -27,7 +25,6 @@ const projects = [
     categories: ["featured"],
     title: "La Cacharrera",
     subtitle: "Telemarketer simulator with AI powered NPCs",
-    image: "assets/lacacharrera.png",
     description:
       `<b>La Cacharrera</b> is a telemarketer simulator that puts the player in the shoes of an online salesperson, 
       who must call customers to sell products from the online store LaCacharrera.es. Player's main objective is to survive as many workdays
@@ -51,7 +48,6 @@ const projects = [
     categories: ["featured"],
     title: "Patterns",
     subtitle: "Programming pattern-based escape room",
-    image: "assets/patterns.png",
     description:
       `<b>Patterns</b> is an escape room built entirely around software design patterns, 
       every puzzle being a working implementation of the one it teaches.
@@ -75,7 +71,6 @@ const projects = [
     categories: ["featured"],
     title: "ARTabletop",
     subtitle: "Bring your favorite tabletop games to life with augmented reality",
-    image: "assets/ARTabletop.png",
     description:
       `This lightweight Android app lets you turn any surface into a game board using augmented reality. 
       Just print a few markers and use your phone’s camera to unlock endless possibilities. 
@@ -104,7 +99,6 @@ const projects = [
     categories: ["featured"],
     title: "Rendering techniques",
     subtitle: "Real-time rendering techiques in Vulkan on a deferred pipeline",
-    image: "assets/renderingtechniques.png",
     description:
       `Implementation of several core features commonly found in real-time rendering engines using C++ and the Vulkan graphics API. 
       The techniques were integrated into a deferred rendering pipeline, with a particular focus on shadow generation.
@@ -132,7 +126,6 @@ const projects = [
     categories: ["featured"],
     title: "Rendering Engine",
     subtitle: "Real-time rendering engine in OpenGL",
-    image: "assets/renderengine.png",
     description:
       `A custom real-time rendering engine built from scratch in C++ and <b>OpenGL</b>. 
       The engine runs a deferred shading pipeline with a forward-rendering fallback, 
@@ -160,13 +153,12 @@ const projects = [
     categories: ["master"],
     title: "Graphics Pipeline Stages in Unity",
     subtitle: "Geometry, tessellation and compute shaders in Unity",
-    image: "assets/pipeline.png",
     description:
       `Unity project (Built-in Render Pipeline) built to explore the different stages of the graphics pipeline in HLSL, 
-      with special emphasis on geometry shaders, tessellation and compute shaders. The result is an interactive sunset island 
+      with special emphasis on geometry, tessellation and compute shaders. The result is an interactive sunset island 
       with the following features:
       <ul>
-      <li>Billboard entities animated via compute shaders</li>
+      <li>Billboard entities with movement controlled via compute shaders</li>
       <li>Ocean with adaptive tessellation, animated via a displacement map</li>
       <li>Procedural grass, created using geometry and tessellation shaders</li>
       <li>Interactive puddle, simulated in real time solving the 2D wave equation</li>
@@ -185,7 +177,6 @@ const projects = [
     categories: ["master"],
     title: "Path Tracer with Nori",
     subtitle: "Path tracing techniques implemented in C++ with Nori",
-    image: "assets/pathtracer.png",
     description:
       `CPU path tracer developed in C++ on top of the Nori educational rendering framework, implementing and studying 
       Monte Carlo techniques for physically based rendering and global illumination. The project was developed incrementally, 
@@ -203,7 +194,6 @@ const projects = [
     categories: ["master"],
     title: "Eulerian Fluid Simulation",
     subtitle: "2D simulation of an eulerian fluid (gas) in C++",
-    image: "assets/fluid.png",
     description:
       `Implementation of a 2D eulerian fluid simulator that solves the incompressible Navier-Stokes equations on a staggered (MAC) grid, 
       written in C++. Each time step handles the terms of the equations one at a time: advection, external forces, viscosity and a 
@@ -221,7 +211,6 @@ const projects = [
     categories: ["master"],
     title: "Box-Filtering in CUDA",
     subtitle: "GPU image box-filtering project implemented in C++ with CUDA",
-    image: "assets/box_filtering.png",
     description:
       `GPU image box-filtering project written in CUDA. It applies convolution filters to images and chains several kernels to build a 
       complete Canny Edge Detector, with support for individual filters. It's also used to measure how techniques such as constant memory, 
@@ -235,11 +224,10 @@ const projects = [
     linkLabel: "View on GitHub",
   },
   {
-    id: "cloth",
+    id: "cloth-simulation",
     categories: ["master"],
     title: "Mass-Spring Systems & Cloth Simulation",
     subtitle: "Physically based simulation of mass-spring systems and cloth in Unity",
-    image: "assets/cloth.png",
     description:
       `Physically based simulation of mass-spring systems in Unity (C#), from simple node-and-spring setups to full cloth built 
       from triangle meshes. It implements several explicit and implicit integration methods on top of a common multidimensional 
@@ -258,7 +246,6 @@ const projects = [
     categories: ["master"],
     title: "Articulated Rigid Bodies in Unity",
     subtitle: "Simulation of articulated rigid bodies connected through point constraints in Unity",
-    image: "assets/constraints.png",
     description:
       `Simulation of articulated rigid bodies in Unity (C#), where rigid bodies are connected through point constraints. 
       The project implements three different ways of integrating and solving the dynamics, making it possible to compare how 
@@ -278,11 +265,10 @@ const projects = [
     linkLabel: "View on GitHub",
   },
   {
-    id: "meshes",
+    id: "algorithms-meshes",
     categories: ["master"],
     title: "Algorithms with Meshes",
     subtitle: "Structures and algorithms with triangle meshes in C++",
-    image: "assets/meshes.png",
     description:
       `Collection of algorithms with triangle meshes, written in C++ and organized as four Visual Studio projects. 
       They cover mesh statistics, boundary detection with distance fields, and UV parameterization using barycentric mapping,
@@ -300,7 +286,6 @@ const projects = [
     categories: ["master"],
     title: "Warping and Morphing",
     subtitle: "Image warping and morphing in MATLAB",
-    image: "assets/morphing.gif",
     description:
       `Three MATLAB scripts written to understand the fundamentals of image warping. Each script implements a different technique, 
       making it possible to compare their behavior and see why some approaches work better than others.
@@ -322,7 +307,6 @@ const projects = [
     categories: ["master"],
     title: "Inverse Kinematics",
     subtitle: "Inverse kinematics on a 2D articulated arm in MATLAB",
-    image: "assets/ik.png",
     description:
       `Inverse kinematics (IK) implementation on a 2D articulated arm, written in MATLAB. 
       The goal is for the end effector of the arm to reach a random target position, different on every execution.
@@ -337,11 +321,10 @@ const projects = [
     linkLabel: "View on GitHub",
   },
   {
-    id: "cnn",
+    id: "emoji-classifier",
     categories: ["master"],
     title: "Emoji Classifier",
     subtitle: "Emoji classification in Python using a Convolutional Neural Network",
-    image: "assets/cnn.png",
     description:
       `Convolutional Neural Network built in PyTorch to classify emoji images into five categories: airplanes, birds, boats, rabbits 
       and felines. The dataset is small and the final test set is private, so the focus of the project is on reducing overfitting and 
@@ -361,7 +344,6 @@ const projects = [
     categories: ["master"],
     title: "Tracking and Stereoscopy",
     subtitle: "Tracking and stereoscopy in C++ using ArUco libraries",
-    image: "assets/tracking.png",
     description:
       `Marker-based tracking and stereoscopic rendering project written in C++ with OpenGL, OpenCV and ArUco. 
       ArUco markers are detected by the webcam and tracked to control the position and rotation of the virtual camera. 
@@ -380,7 +362,6 @@ const projects = [
     categories: ["master"],
     title: "Tone Mapping in CUDA",
     subtitle: "Parallel image tone mapping with CUDA",
-    image: "assets/tonemapping_cuda.png",
     description:
       `GPU implementation of the histogram-based stage of HDR tone mapping, written in CUDA. 
       Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
@@ -399,7 +380,6 @@ const projects = [
     categories: ["jams"],
     title: "The Other Side",
     subtitle: "Navigate with sound and solve puzzles",
-    image: "assets/theOtherSide.png",
     description:
       `A horror and suspense game in which the player must solve puzzles by alternating between 
       reality and <b>"the other side"</b>; a dark realm where they can only navigate by sound.`,
@@ -418,7 +398,6 @@ const projects = [
     categories: ["jams"],
     title: "Regrets & Complaints",
     subtitle: "A game about life, time, regrets & complaints",
-    image: "assets/regrets.png",
     description:
       `<b>Regrets & Complaints</b> is a purely narrative experience that explores the relentless passage of time, 
       depicting how different characters grow, age, and eventually die amid regrets and complaints. 
@@ -438,10 +417,9 @@ const projects = [
     categories: ["jams"],
     title: "Kuko",
     subtitle: "My very first Unity project",
-    image: "assets/kuko.png",
     description:
       `<b>Kuko</b> is a 2D pixel art platformer where the player controls a baby dragon lost in a cave inhabited 
-      by evil humans who want him dead.
+      by evil humans who want to hunt him.
       <br><br>This game is my first project in Unity, which allowed me to learn the engine's most basic aspects on my own.`,
     details: {
       Language: "Spanish",
@@ -458,9 +436,8 @@ const projects = [
     categories: ["jams"],
     title: "Julián.",
     subtitle: "My very first game jam participation",
-    image: "assets/julian.png",
     description:
-      `Julián is a young man, notable for his lack of a sense of danger and his passion for Real Betis football club, is kidnapped
+      `Julián is a young man notable for his lack of a sense of danger and his passion for Real Betis football club, who is kidnapped
       just before a Real Madrid vs. Betis match. To escape, he is forced to complete a series of challenges governed by three rules.
       <br><br>Will he manage to break free and make it back in time for the game?`,
     details: {
@@ -480,7 +457,6 @@ const projects = [
     categories: ["degree"],
     title: "KO Cube",
     subtitle: "Top-down 3v3 multiplayer hero shooter",
-    image: "assets/kocube.png",
     description:
       `<b>KO Cube</b> is a competitive 3v3 hero shooter where players battle across three game modes: 
       <i>Hotzone</i>, <i>Team Deathmatch</i>, and <i>Capture the Flag</i>, with two maps for each mode. 
@@ -502,7 +478,6 @@ const projects = [
     categories: ["degree"],
     title: "Indie Studio Simulator",
     subtitle: "Living colony simulation using FSMs, Behavior Trees & Utility Systems",
-    image: "assets/indiestudio.png",
     description:
       `<b>Indie Studio Simulator</b> is a simulation of an indie game development studio designed as a living colony, where 
       different characters interact with each other to create a dynamic environment. 
@@ -524,7 +499,6 @@ const projects = [
     categories: ["degree"],
     title: "Trouble in NPC Town",
     subtitle: "Asymmetric 2-player online browser game made with Phaser",
-    image: "assets/tinpct.png",
     description:
       `Asymmetric 2-player browser game made with Phaser, where one player pretends to be an NPC and the other has to find and shoot them. 
       The game uses a Spring Boot server with a <b>REST API</b> for user accounts and <b>WebSockets</b> for the real-time game logic.`,
@@ -545,7 +519,6 @@ const projects = [
     categories: ["degree"],
     title: "Cuestión de Piños",
     subtitle: "Narrative-driven video game in virtual reality",
-    image: "assets/cdp.png",
     description:
       `<b>Cuestión de Piños</b> is a multi-perspective VR game following the handsome but self-conscious Mario Trespiños in his search for love. 
       Experience his story across three chapters, each played through a different character's eyes.
@@ -566,7 +539,6 @@ const projects = [
     categories: ["degree"],
     title: "Skyline Express",
     subtitle: "Endless Runner for Android with AR features",
-    image: "assets/skyline.png",
     description:
       `<b>Skyline Express: Totally Accurate And Reliable Flying Train Service Simulator</b> is an endless runner in which players control
       a flying train. The main objective is to fly endlessly through the sky while dodging obstacles and collecting coal coins,
@@ -590,7 +562,6 @@ const projects = [
     categories: ["degree"],
     title: "Missile Rally",
     subtitle: "Multiplayer racing game for up to four players",
-    image: "assets/missile.png",
     description:
       `<b>Missile Rally</b> is a multiplayer racing game for up to 4 players, where players can create a lobby,
       invite their friends and fight for first place over a number of laps. 
@@ -612,7 +583,6 @@ const projects = [
     categories: ["degree"],
     title: "Pathfinding & Reinforcement Learning",
     subtitle: "Q-Learning, A* and Horizon Search in Unity",
-    image: "assets/pathfinding.png",
     description:
       `Unity project with two AI practices:
       <ul>
@@ -633,7 +603,6 @@ const projects = [
     categories: ["degree"],
     title: "Space Invaders in Own Game Engine",
     subtitle: "Space Invaders implemented in a custom, simple game engine developed in C++",
-    image: "assets/spaceinvaders.png",
     description:
       `Very small and simple game engine written in C++ with OpenGL and GLUT, on top of which a Space Invaders 
       own simplified implementation has been built. The engine provides a scene system, an .obj model loader and a 
@@ -651,7 +620,6 @@ const projects = [
     categories: ["degree"],
     title: "Game of Life",
     subtitle: "Own implementation of Conway's Game of Life in JavaScript",
-    image: "assets/gameoflife.png",
     description:
       `Interactive implementation of John Conway's Game of Life in JavaScript, drawn on an HTML canvas. The world is a square 
       grid of cells that live or die in each step according to the number of living neighbors they have.`,
@@ -668,7 +636,6 @@ const projects = [
     categories: ["degree"],
     title: "Arkanoid in Assembly",
     subtitle: "Simplified Arkanoid clone written in MIPS assembly",
-    image: "assets/arkanoid.png",
     description:
       `Simplified Arkanoid clone written in MIPS assembly for the MARS 4.5 simulator. The game is drawn on the Bitmap 
       Display and controlled through the Keyboard and Display MMIO Simulator.`,
@@ -685,7 +652,6 @@ const projects = [
     categories: ["degree"],
     title: "Bingo Simulator",
     subtitle: "Bingo simulator developed in Java",
-    image: "assets/bingo.jpg",
     description:
       `This bingo simulator was developed in Java for a first-year data structures course. All data structures are implemented from scratch, 
       without relying on built-in collection classes or external packages, and are used to simulate complete bingo games for 2 to 4 players.
@@ -709,7 +675,6 @@ const projects = [
     categories: ["degree"],
     title: "Physics in Processing",
     subtitle: "Physics calculations in computers using Processing",
-    image: "assets/processing.png",
     description:
       `Collection of physics simulations for the course Physics in Video Games, implemented in Processing (Java mode). 
       Each sketch focuses on a different family of techniques: numerical integration, mass-spring systems, 
@@ -727,7 +692,6 @@ const projects = [
 //    categories: ["degree"],
 //    title: "Heat & Hopes",
 //    subtitle: "Space-themed platformer focused on usability and accessibility",
-//    image: "assets/heathopes.png",
 //    description:
 //      `<b>Heat & Hopes</b> is a space-themed platformer developed in Unity. Its main goal was to focus on usability and
 //      accessibility, creating a game with an understandable and intuitive UI that includes various adaptability options,
@@ -747,7 +711,6 @@ const projects = [
 //    categories: ["degree"],
 //    title: "Phantom Realm",
 //    subtitle: "My very first 3D video game in Unity",
-//    image: "assets/phantomrealm.png",
 //    description:
 //      `<b>Phantom Realm</b> is a zombie first person shooter featuring four different weapons, health and ammo management, 
 //      various enemy types and three unique maps. 
@@ -769,7 +732,6 @@ const projects = [
 //    categories: ["degree"],
 //    title: "Pokemon Fan-Made Game",
 //    subtitle: "My very first video game",
-//    image: "assets/pokemon.png",
 //    description:
 //      `This is an unofficial Pokemon game developed in Adventure Game Studio during my first year of university, 
 //      for the course on <b>Narrative, Scriptwritting and Storyboarding</b>.
