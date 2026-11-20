@@ -1,5 +1,12 @@
 const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "gif"];
 const folderOf = (p) => `assets/${p.id}`;
+const coverPromises = [];
+
+//Gallery and images:
+const galleryCache = {};
+let gallery = { urls: [], index: 0 };
+let openToken = 0;
+const imgCache = {};
 
 function probeImage(basePath) {
   return new Promise((resolve) => {
@@ -16,7 +23,6 @@ function probeImage(basePath) {
   });
 }
 
-const galleryCache = {};
 async function loadGallery(project) {
   if (typeof galleryManifest !== "undefined" && galleryManifest[project.id]) {
     return galleryManifest[project.id];
@@ -34,9 +40,6 @@ async function loadGallery(project) {
   return (galleryCache[project.id] = urls);
 }
 
-let gallery = { urls: [], index: 0 };
-let openToken = 0;
-
 function showGalleryImage(i) {
   if (gallery.urls.length === 0) return;
   const n = gallery.urls.length;
@@ -45,7 +48,6 @@ function showGalleryImage(i) {
   document.getElementById("gallery-counter").textContent = `${gallery.index + 1} / ${n}`;
 }
 
-const imgCache = {};
 function getImage(url) {
   if (!imgCache[url]) {
     const img = new Image();
@@ -71,6 +73,69 @@ async function preloadAll(urls, token) {
   }
 }
 
+//Hover:
+let activeHover = null;
+const HOVER_INTERVAL = 2500;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const canHover = () =>
+  matchMedia("(hover: hover)").matches &&
+  !matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function coverUrl(p) {
+  return (typeof galleryManifest !== "undefined" && galleryManifest[p.id] && galleryManifest[p.id][0]) || null;
+}
+
+async function preloadSequential(urls, keepGoing) {
+  for (const url of urls) {
+    if (!keepGoing()) return;
+    await whenLoaded(url);
+  }
+}
+
+async function startHoverPreview(card) {
+  if (!canHover()) return;
+  const p = projects.find((x) => x.id === card.dataset.projectId);
+  const thumb = card.querySelector(".project-thumb");
+  if (!p || !thumb) return;
+
+  const me = { card };
+  activeHover = me;
+  const alive = () => activeHover === me;
+
+  const urls = await loadGallery(p);
+  if (!alive() || urls.length < 2) return;
+
+  preloadSequential(urls.slice(1), alive);
+
+  let i = 0;
+  let first = true;
+  while (true) {
+    if (!first) await sleep(HOVER_INTERVAL);
+    first = false;
+    if (!alive()) return;
+    const next = (i + 1) % urls.length;
+    await whenLoaded(urls[next]);
+    if (!alive()) return;
+    i = next;
+    thumb.src = urls[i];
+  }
+}
+
+function stopHoverPreview(card) {
+  if (!activeHover || activeHover.card !== card) return;
+  activeHover = null;
+  const thumb = card.querySelector(".project-thumb");
+  if (thumb && thumb.dataset.cover) thumb.src = thumb.dataset.cover;
+}
+
+async function warmUpSecondImages() {
+  for (const p of projects) {
+    const urls = await loadGallery(p);
+    if (urls[1]) await whenLoaded(urls[1]);
+  }
+}
+
+//Modal:
 let imgToken = 0;
 function setModalImage(url) {
   const img = document.getElementById("modal-image");
@@ -123,13 +188,26 @@ function renderSection(containerId, category) {
     )
     .join("");
 
-  container.querySelectorAll(".project-thumb").forEach(async (img) => {
-    const url = await probeImage(`${img.dataset.folder}/cover`);
-    if (url) img.src = url;
-  });
+    container.querySelectorAll(".project-thumb").forEach((img) => {
+      coverPromises.push((async () => {
+        const p = projects.find((x) => x.id === img.closest("[data-project-id]").dataset.projectId);
+        const url = coverUrl(p) || (await probeImage(`${img.dataset.folder}/portrait`));
+        if (!url) return;
+        img.dataset.cover = url;
+        img.src = url;
+        await whenLoaded(url);
+      })());
+    });
+
+    container.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("mouseenter", () => startHoverPreview(card));
+      card.addEventListener("mouseleave", () => stopHoverPreview(card));
+    });
 }
 
 async function openProjectModal(projectId) {
+  if (activeHover) stopHoverPreview(activeHover.card);
+
   const p = projects.find((proj) => proj.id === projectId);
   if (!p) return;
 
@@ -162,7 +240,7 @@ async function openProjectModal(projectId) {
   gallery = { urls: [], index: 0 };
   document.getElementById("gallery-counter").textContent = "";
   document.querySelector(".gallery").classList.add("single");
-  setModalImage(thumb && thumb.src ? thumb.src : null);
+  setModalImage(thumb && thumb.dataset.cover ? thumb.dataset.cover : null);
 
   modal.hidden = false;
   document.body.classList.add("modal-open");
@@ -209,3 +287,4 @@ renderSection("featured-grid", "featured");
 renderSection("master-grid", "master");
 renderSection("jams-grid", "jams");
 renderSection("degree-grid", "degree");
+Promise.all(coverPromises).then(warmUpSecondImages);
