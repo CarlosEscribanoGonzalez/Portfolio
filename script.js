@@ -18,6 +18,9 @@ function probeImage(basePath) {
 
 const galleryCache = {};
 async function loadGallery(project) {
+  if (typeof galleryManifest !== "undefined" && galleryManifest[project.id]) {
+    return galleryManifest[project.id];
+  }
   if (galleryCache[project.id]) return galleryCache[project.id];
   const folder = folderOf(project);
   const urls = [];
@@ -40,9 +43,32 @@ function showGalleryImage(i) {
   gallery.index = (i + n) % n;
   setModalImage(gallery.urls[gallery.index]);
   document.getElementById("gallery-counter").textContent = `${gallery.index + 1} / ${n}`;
-  [gallery.index + 1, gallery.index - 1].forEach((j) => {
-    new Image().src = gallery.urls[(j + n) % n];
+}
+
+const imgCache = {};
+function getImage(url) {
+  if (!imgCache[url]) {
+    const img = new Image();
+    img.src = url;
+    imgCache[url] = img;
+  }
+  return imgCache[url];
+}
+
+function whenLoaded(url) {
+  const img = getImage(url);
+  if (img.complete) return Promise.resolve();
+  return new Promise((resolve) => {
+    img.addEventListener("load", resolve, { once: true });
+    img.addEventListener("error", resolve, { once: true });
   });
+}
+
+async function preloadAll(urls, token) {
+  for (const url of urls) {
+    if (token !== openToken) return;
+    await whenLoaded(url);
+  }
 }
 
 let imgToken = 0;
@@ -56,21 +82,17 @@ function setModalImage(url) {
     gal.classList.add("loading");
     return;
   }
-
-  const loader = new Image();
-  loader.src = url;
-  if (loader.complete) { 
+  if (getImage(url).complete) {
     img.src = url;
     gal.classList.remove("loading");
     return;
   }
-
   gal.classList.add("loading");
-  loader.onload = loader.onerror = () => {
+  whenLoaded(url).then(() => {
     if (token !== imgToken) return;
     img.src = url;
     gal.classList.remove("loading");
-  };
+  });
 }
 
 function renderSection(containerId, category) {
@@ -150,6 +172,7 @@ async function openProjectModal(projectId) {
   gallery = { urls, index: 0 };
   document.querySelector(".gallery").classList.toggle("single", urls.length <= 1);
   showGalleryImage(0);
+  preloadAll(urls, myToken);
 }
 
 function closeProjectModal() {
