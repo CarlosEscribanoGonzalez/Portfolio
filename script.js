@@ -166,6 +166,8 @@ async function openProjectModal(projectId) {
 
   modal.hidden = false;
   document.body.classList.add("modal-open");
+  modal.querySelector(".modal-box").scrollTop = 0;
+  document.body.classList.add("modal-open");
 
   const urls = await loadGallery(p);
   if (myToken !== openToken) return;
