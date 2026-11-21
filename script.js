@@ -75,7 +75,7 @@ async function preloadAll(urls, token) {
 
 //Hover:
 let activeHover = null;
-const HOVER_INTERVAL = 2500;
+const HOVER_INTERVAL = 3000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const canHover = () =>
   matchMedia("(hover: hover)").matches &&
