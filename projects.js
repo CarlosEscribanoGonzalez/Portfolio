@@ -119,7 +119,7 @@ const projects = [
     details: {
       "Graphics API": "Vulkan",
       Language: "C++, GLSL",
-      "Release Date": "May 20, 2026",
+      "Date": "May 20, 2026",
       Platform: "PC"
     },
     links: [
@@ -145,7 +145,7 @@ const projects = [
     details: {
       "Graphics API": "OpenGL",
       Language: "C++, GLSL",
-      "Release Date": "January 01, 2026",
+      "Date": "January 01, 2026",
       Platform: "PC"
     },
     links: [
@@ -171,7 +171,7 @@ const projects = [
       </ul>`,
     details: {
       Language: "C#, HLSL",
-      "Release Date": "May 24, 2026",
+      "Date": "May 24, 2026",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -190,7 +190,7 @@ const projects = [
       from sampling and direct lighting to a full path tracer with next-event estimation, multiple importance sampling and microfacet materials.`,
     details: {
       Language: "C++",
-      "Release Date": "March 24, 2026",
+      "Date": "March 24, 2026",
       Platform: "PC",
     },
     links: [
@@ -208,7 +208,7 @@ const projects = [
       pressure projection that makes the fluid incompressible. Colored ink is advected along the fluid to visualize the flow.`,
     details: {
       Language: "C++",
-      "Release Date": "March 29, 2026",
+      "Date": "March 29, 2026",
       Platform: "PC",
     },
     links: [
@@ -226,7 +226,7 @@ const projects = [
       shared memory and block size affect performance.`,
     details: {
       Language: "C++, CUDA",
-      "Release Date": "April 27, 2026",
+      "Date": "April 27, 2026",
       Platform: "PC"
     },
     links: [
@@ -244,7 +244,7 @@ const projects = [
       state formulation, so their stability and behavior can be compared directly.`,
     details: {
       Language: "C#",
-      "Release Date": "February 11, 2026",
+      "Date": "February 11, 2026",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -268,7 +268,7 @@ const projects = [
       </ul>`,
     details: {
       Language: "C#",
-      "Release Date": "March 02, 2026",
+      "Date": "March 02, 2026",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -287,7 +287,7 @@ const projects = [
       using Eigen for both dense and sparse linear algebra.`,
     details: {
       Language: "C++",
-      "Release Date": "October 22, 2025",
+      "Date": "October 22, 2025",
       Platform: "PC"
     },
     links: [
@@ -309,7 +309,7 @@ const projects = [
       </ul>`,
     details: {
       Language: "MATLAB",
-      "Release Date": "December 02, 2025",
+      "Date": "December 02, 2025",
       Platform: "PC"
     },
     links: [
@@ -328,7 +328,7 @@ const projects = [
       small incremental steps until the target is reached.`,
     details: {
       Language: "MATLAB",
-      "Release Date": "December 18, 2026",
+      "Date": "December 18, 2026",
       Platform: "PC"
     },
     links: [
@@ -348,7 +348,7 @@ const projects = [
       The results obtained were satisfactory, reaching 0.1 validation loss and 95% accuracy in the best runs.`,
     details: {
       Language: "Python",
-      "Release Date": "November 25, 2025",
+      "Date": "November 25, 2025",
       Platform: "PC"
     },
     links: [
@@ -367,7 +367,7 @@ const projects = [
       The scene can be rendered in stereo using two different methods, <i>toe-in</i> and <i>off-axis</i>, with red/blue anaglyph filters.`,
     details: {
       Language: "C++",
-      "Release Date": "November 30, 2025",
+      "Date": "November 30, 2025",
       Platform: "PC"
     },
     links: [
@@ -384,7 +384,7 @@ const projects = [
       Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
     details: {
       Language: "C++, CUDA",
-      "Release Date": "April 13, 2026",
+      "Date": "April 13, 2026",
       Platform: "PC"
     },
     links: [
@@ -405,6 +405,7 @@ const projects = [
       Language: "Spanish",
       Genre: "Puzzle, Suspense",
       "Release Date": "October 27, 2024",
+      "Jam Duration": "20 days",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -425,6 +426,7 @@ const projects = [
       Language: "Spanish",
       Genre: "Narrative Adventure",
       "Release Date": "March 23, 2024",
+      "Jam Duration": "15 days",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -445,6 +447,7 @@ const projects = [
       Language: "Spanish",
       Genre: "Platformer",
       "Release Date": "October 18, 2022",
+      "Jam Duration": "18 days",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -456,7 +459,7 @@ const projects = [
     id: "julian",
     categories: ["jams"],
     title: "Julián.",
-    subtitle: "My very first game jam participation",
+    subtitle: "My very first game and jam participation",
     description:
       `Julián is a young man notable for his lack of a sense of danger and his passion for Real Betis football club, who is kidnapped
       just before a Real Madrid vs. Betis match. To escape, he is forced to complete a series of challenges governed by three rules.
@@ -465,11 +468,12 @@ const projects = [
       Language: "Spanish",
       Genre: "Graphic Adventure",
       "Release Date": "February 08, 2022",
+      "Jam Duration": "3 days",
       Platform: "PC",
       Engine: "Adventure Game Studio"
     },
     links: [
-      { label: "View on GitHub", url: "https://guajiro0.itch.io/julian" }
+      { label: "Play", url: "https://guajiro0.itch.io/julian" }
     ],
   },
 
@@ -618,7 +622,7 @@ const projects = [
       </ul>`,
     details: {
       Language: "C#",
-      "Release Date": "January 19, 2024",
+      "Date": "January 19, 2024",
       Platform: "PC",
       Engine: "Unity"
     },
@@ -637,7 +641,7 @@ const projects = [
       fixed-timestep game loop, while the game itself is implemented as a set of scripts that use it.`,
     details: {
       Language: "C++",
-      "Release Date": "November 23, 2022",
+      "Date": "November 23, 2022",
       Platform: "PC"
     },
     links: [
@@ -654,7 +658,7 @@ const projects = [
       grid of cells that live or die in each step according to the number of living neighbors they have.`,
     details: {
       Language: "JavaScript",
-      "Release Date": "December 03, 2022",
+      "Date": "December 03, 2022",
       Platform: "PC"
     },
     links: [
@@ -671,7 +675,7 @@ const projects = [
       Display and controlled through the Keyboard and Display MMIO Simulator.`,
     details: {
       Language: "Assembly",
-      "Release Date": "May 23, 2023",
+      "Date": "May 23, 2023",
       Platform: "PC"
     },
     links: [
@@ -695,7 +699,7 @@ const projects = [
       </ul>`,
     details: {
       Language: "Java",
-      "Release Date": "June 15, 2022",
+      "Date": "June 15, 2022",
       Platform: "PC"
     },
     links: [
@@ -713,7 +717,7 @@ const projects = [
       penalty-based contact and impulse-based rigid body collisions.`,
     details: {
       Language: "Processing",
-      "Release Date": "December 12, 2021",
+      "Date": "December 12, 2021",
       Platform: "PC"
     },
     links: [
