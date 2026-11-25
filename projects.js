@@ -20,6 +20,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://typtyp-studios.itch.io/mechanoccult" }
     ],
+    badge: "unity.png",
   },
   {
     id: "la-cacharrera",
@@ -44,6 +45,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/la-cacharrera" }
     ],
+    badge: "unity.png",
   },
   {
     id: "patterns",
@@ -68,6 +70,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/patterns" }
     ],
+    badge: "unity.png",
   },
   {
     id: "artabletop",
@@ -97,6 +100,7 @@ const projects = [
     links: [
       { label: "Download", url: "https://karesito.itch.io/artabletop" }
     ],
+    badge: "unity.png",
   },
   {
     id: "rendering-techniques",
@@ -125,6 +129,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Techniques-in-Vulkan" }
     ],
+    badge: "c++.png",
   },
   {
     id: "opengl-engine",
@@ -151,6 +156,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Engine" }
     ],
+    badge: "c++.png",
   },
 
   //MASTER
@@ -178,6 +184,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Graphics-Pipeline-Stages-in-Unity" }
     ],
+    badge: "unity.png",
   },
   {
     id: "path-tracer",
@@ -196,6 +203,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Nori-Path-Tracer" }
     ],
+    badge: "c++.png",
   },
   {
     id: "fluid-simulation",
@@ -214,6 +222,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation" }
     ],
+    badge: "c++.png",
   },
   {
     id: "box-filtering",
@@ -232,6 +241,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA" }
     ],
+    badge: "cuda.png",
   },
   {
     id: "cloth-simulation",
@@ -251,6 +261,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Mass-Spring-Cloth-Simulation" }
     ],
+    badge: "unity.png",
   },
   {
     id: "articulated-rb",
@@ -275,6 +286,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Articulated-Rigid-Bodies-in-Unity" }
     ],
+    badge: "unity.png",
   },
   {
     id: "algorithms-meshes",
@@ -293,6 +305,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Algorithms-with-meshes" }
     ],
+    badge: "c++.png",
   },
   {
     id: "warping-morphing",
@@ -315,6 +328,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Warping-Morphing" }
     ],
+    badge: "matlab.png",
   },
   {
     id: "inverse-kinematics",
@@ -334,6 +348,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Inverse-Kinematics" }
     ],
+    badge: "matlab.png",
   },
   {
     id: "emoji-classifier",
@@ -354,6 +369,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Emoji-Classification-CNN" }
     ],
+    badge: "python.png",
   },
   {
     id: "tracking-stereoscopy",
@@ -373,6 +389,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy" }
     ],
+    badge: "c++.png",
   },
   {
     id: "tonemapping-cuda",
@@ -390,6 +407,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA" }
     ],
+    badge: "cuda.png",
   },
 
   //JAMS:
@@ -412,6 +430,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/the-other-side" }
     ],
+    badge: "unity.png",
   },
   {
     id: "regrets-and-complaints",
@@ -433,6 +452,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/regrets-n-complaints" }
     ],
+    badge: "unity.png",
   },
   {
     id: "kuko",
@@ -454,6 +474,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/kuko" }
     ],
+    badge: "unity.png",
   },
   {
     id: "julian",
@@ -475,6 +496,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://guajiro0.itch.io/julian" }
     ],
+    badge: "ags.png",
   },
 
   //DEGREE
@@ -499,6 +521,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://flatwall-games.itch.io/kocube" }
     ],
+    badge: "unity.png",
   },
   {
     id: "indie-studio",
@@ -521,6 +544,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://flatwall-games.itch.io/indie-studio-simulator" }
     ],
+    badge: "unity.png",
   },
   {
     id: "tinpct",
@@ -541,6 +565,7 @@ const projects = [
       { label: "View on GitHub (online version)", url: "https://github.com/CarlosEscribanoGonzalez/Trouble-in-NPC-Town" },
       { label: "Play on Itch.io (offline version)", url: "https://karesito.itch.io/trouble-in-npc-town" }
     ],
+    badge: "phaser.png",
   },
   {
     id: "cuestion-de-pinos",
@@ -562,6 +587,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/cuestin-de-pinos" }
     ],
+    badge: "unity.png",
   },
     {
     id: "skyline-express",
@@ -586,6 +612,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/skyline-express-totally-accurate-and-reliable-flying-train-service-simulator" }
     ],
+    badge: "unity.png",
   },
   {
     id: "missile-rally",
@@ -608,6 +635,7 @@ const projects = [
     links: [
       { label: "Play", url: "https://karesito.itch.io/missile-rally" }
     ],
+    badge: "unity.png",
   },
   {
     id: "pathfinding",
@@ -629,6 +657,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Pathfinding-and-Q-Learning" }
     ],
+    badge: "unity.png",
   },
   {
     id: "space-invaders",
@@ -647,6 +676,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Space-Invaders-in-Own-Game-Engine" }
     ],
+    badge: "c++.png",
   },
   {
     id: "gameoflife",
@@ -664,6 +694,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
     ],
+    badge: "javascript.png",
   },
   {
     id: "arkanoid",
@@ -681,6 +712,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Arkanoid-in-Assembly" }
     ],
+    badge: "assembly.png",
   },
   {
     id: "bingo",
@@ -705,6 +737,7 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Bingo-Simulator" }
     ],
+    badge: "java.png",
   },
   {
     id: "processing",
@@ -723,5 +756,6 @@ const projects = [
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Physics-in-Processing" }
     ],
+    badge: "processing.png",
   },
 ];

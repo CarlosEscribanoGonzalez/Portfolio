@@ -22,6 +22,33 @@ body { margin: 0; font-family: sans-serif; }
 .project-caption { padding: 8px 0; }
 .project-title { font-weight: bold; }
 .project-subtitle { color: #666; font-size: 0.9em; }
+.project-cover { position: relative; }
+.project-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  height: 25%;
+  max-width: 25%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6)); /* legible sobre cualquier fondo */
+  pointer-events: none;   /* el clic sigue yendo a la tarjeta */
+  transition: opacity 0.2s;
+}
+.project-badge.top {
+  top: 8px;
+  bottom: auto;
+}
+.project-badge.left {
+  left: 8px;
+  right: auto;
+}
+.project-badge.top-left {
+  top: 8px;
+  bottom: auto;
+  left: 8px;
+  right: auto;
+}
+.project-badge.hidden { opacity: 0; }
 
 .empty-note { color: #999; font-style: italic; }
 

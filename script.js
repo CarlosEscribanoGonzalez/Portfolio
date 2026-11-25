@@ -96,6 +96,7 @@ async function startHoverPreview(card) {
   if (!canHover()) return;
   const p = projects.find((x) => x.id === card.dataset.projectId);
   const thumb = card.querySelector(".project-thumb");
+  const badge = card.querySelector(".project-badge");
   if (!p || !thumb) return;
 
   const me = { card };
@@ -118,6 +119,7 @@ async function startHoverPreview(card) {
     if (!alive()) return;
     i = next;
     thumb.src = urls[i];
+    if(badge) badge.classList.toggle("hidden", i !== 0);
   }
 }
 
@@ -126,6 +128,8 @@ function stopHoverPreview(card) {
   activeHover = null;
   const thumb = card.querySelector(".project-thumb");
   if (thumb && thumb.dataset.cover) thumb.src = thumb.dataset.cover;
+  const badge = card.querySelector(".project-badge");
+  if (badge) badge.classList.remove("hidden");
 }
 
 async function warmUpSecondImages() {
@@ -178,12 +182,15 @@ function renderSection(containerId, category) {
     .map(
       (p) => `
       <div class="project-card" data-project-id="${p.id}">
-        <img class="project-thumb" data-folder="${folderOf(p)}" alt="${p.title}">
-        <div class="project-caption">
-          <div class="project-title">${p.title}</div>
-          <div class="project-subtitle">${p.subtitle}</div>
-        </div>
+      <div class="project-cover">
+        <img class="project-thumb" data-folder="${p.folder}" alt="${p.title}">
+        ${p.badge ? `<img class="project-badge${p.badgePosition ? ` ${p.badgePosition}` : ""}" src="assets/logos/${p.badge}" alt="">` : ""}
       </div>
+      <div class="project-caption">
+        <div class="project-title">${p.title}</div>
+        <div class="project-subtitle">${p.subtitle}</div>
+      </div>
+    </div>
       `
     )
     .join("");
