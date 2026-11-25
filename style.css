@@ -26,7 +26,7 @@ body { margin: 0; font-family: sans-serif; }
 .project-badge {
   position: absolute;
   right: 8px;
-  bottom: 8px;
+  top: 8px;
   height: 25%;
   max-width: 25%;
   object-fit: contain;
@@ -34,17 +34,17 @@ body { margin: 0; font-family: sans-serif; }
   pointer-events: none;   /* el clic sigue yendo a la tarjeta */
   transition: opacity 0.2s;
 }
-.project-badge.top {
-  top: 8px;
-  bottom: auto;
+.project-badge.bottom {
+  bottom: 8px;
+  top: auto;
 }
 .project-badge.left {
   left: 8px;
   right: auto;
 }
-.project-badge.top-left {
-  top: 8px;
-  bottom: auto;
+.project-badge.bottom-left {
+  bottom: 8px;
+  top: auto;
   left: 8px;
   right: auto;
 }
