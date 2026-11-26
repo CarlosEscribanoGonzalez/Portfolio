@@ -226,9 +226,10 @@ async function openProjectModal(projectId) {
   document.getElementById("modal-description").innerHTML = p.description;
   document.getElementById("modal-image").alt = p.title;
 
-  const detailsList = document.getElementById("modal-details");
-  detailsList.innerHTML = Object.entries(p.details || {})
-    .map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`)
+  const fields = TEMPLATES[p.template] || Object.keys(p.details || {});
+  document.getElementById("modal-details").innerHTML = fields
+    .filter((f) => p.details && p.details[f])
+    .map((f) => `<li><strong>${f}:</strong> ${p.details[f]}</li>`)
     .join("");
 
   const linksBox = document.getElementById("modal-links");
@@ -288,6 +289,18 @@ document.addEventListener("keydown", (e) => {
 
 document.getElementById("gallery-prev").addEventListener("click", () => showGalleryImage(gallery.index - 1));
 document.getElementById("gallery-next").addEventListener("click", () => showGalleryImage(gallery.index + 1));
+
+//Project validation:
+function validateProjects() {
+  for (const p of projects) {
+    const allowed = TEMPLATES[p.template];
+    if (!allowed) { console.warn(`[${p.id}] missing or unknown template: "${p.template}"`); continue; }
+    for (const key of Object.keys(p.details || {})) {
+      if (!allowed.includes(key)) console.warn(`[${p.id}] "${key}" is not a template key "${p.template}"`);
+    }
+  }
+}
+validateProjects();
 
 //Sections:
 renderSection("featured-grid", "featured");

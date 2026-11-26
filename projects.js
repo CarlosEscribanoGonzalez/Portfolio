@@ -1,5 +1,26 @@
+// @ts-check
+/**
+ * @typedef {{ [K in keyof Templates]: {
+ *   template: K,
+ *   details?: { [F in Templates[K][number]]?: string }
+ * } }[keyof Templates]} TemplateDetails
+ *
+ * @typedef {{
+ *   id: string,
+ *   categories: ("featured"|"master"|"jams"|"degree")[],
+ *   title: string,
+ *   subtitle: string,
+ *   folder?: string,
+ *   description: string,
+ *   links?: { label: string, url: string }[],
+ *   badge?: string,
+ *   badgePosition?: "left" | "bottom-left" | "bottom"
+ * } & TemplateDetails} Project
+ */
+
+/** @type {Project[]} */
 const projects = [
-  {
+  { //MECHANOCCULT
     id: "mechanoccult",
     categories: ["featured"],
     title: "Mechanoccult",
@@ -10,8 +31,9 @@ const projects = [
       The core gameplay blends the agility of <i>typing games</i> with the tactical depth of a <i>deck-builder</i>. 
       As you recite the ritual to summon your deity, you must manage your corruption level and cast strategic spells to sabotage your rival, 
       alter their text, or protect yourself from their attacks in real time.`,
-    details: {
-      Languages: "English",
+    template: "Games",
+      details: {
+      Language: "English",
       Genre: "Competitive Typing, Deck-Builder",
       Status: "In active development",
       Platform: "PC",
@@ -22,7 +44,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //LA CACHARRERA
     id: "la-cacharrera",
     categories: ["featured"],
     title: "La Cacharrera",
@@ -35,8 +57,9 @@ const projects = [
       NPCs are powered by generative AI technologies and driven by personality algorithms, making each playthrough feel unique.
       This game is a demo built to showcase <i>Conversational NPCs</i>, a tool developed for Unity that gives any agent conversational 
       capabilities. There are plans to commercialize this tool on the Unity Asset Store in the near future.`,
+    template: "Games",
     details: {
-      Languages: "Spanish",
+      Language: "Spanish",
       Genre: "Simulation",
       "Release Date": "July 21, 2026",
       Platform: "PC",
@@ -47,7 +70,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //PATTERNS
     id: "patterns",
     categories: ["featured"],
     title: "Patterns",
@@ -60,8 +83,9 @@ const projects = [
       <br><br>
       The deeper player gets, the stranger those analogies start to feel. What begins as a 
       clean lesson in software architecture slowly curdles into something else entirely.`,
+    template: "Games",
     details: {
-      Languages: "Spanish",
+      Language: "Spanish",
       Genre: "Escape Room",
       "Release Date": "January 19, 2026",
       Platform: "PC",
@@ -72,7 +96,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //ARTABLETOP
     id: "artabletop",
     categories: ["featured"],
     title: "ARTabletop",
@@ -91,8 +115,9 @@ const projects = [
       <b>Play online or offline</b>.
       Take your games with you. Whether you're at home, with friends, or on the go, 
       ARTabletop lets you enjoy your favorite games in both online and offline sessions.`,
+    template: "Games",
     details: {
-      Languages: "English",
+      Language: "English",
       "Release Date": "July 08, 2025",
       Platform: "Android",
       Engine: "Unity"
@@ -102,7 +127,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //RENDERING TECHNIQUES
     id: "rendering-techniques",
     categories: ["featured"],
     title: "Rendering techniques",
@@ -120,18 +145,19 @@ const projects = [
       <li>PBR materials</li>
       </ul>
       `,
+    template: "Graphics",
     details: {
       "Graphics API": "Vulkan",
-      Language: "C++, GLSL",
+      "Programming Language": "C++, GLSL",
       "Date": "May 20, 2026",
-      Platform: "PC"
+      //TECHNOLOGIES FALTA
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Techniques-in-Vulkan" }
     ],
     badge: "c++.png",
   },
-  {
+  { //RENDERING ENGINE
     id: "opengl-engine",
     categories: ["featured"],
     title: "Rendering Engine",
@@ -147,11 +173,11 @@ const projects = [
       <br><br>
       On top of that, multiple post-processing effects can be easily configured and stacked: 
       bloom, depth-of-field, motion blur, Sobel, Gaussian blur...`,
+    template: "Graphics",
     details: {
       "Graphics API": "OpenGL",
-      Language: "C++, GLSL",
+      "Programming Language": "C++, GLSL",
       "Date": "January 01, 2026",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Engine" }
@@ -160,7 +186,7 @@ const projects = [
   },
 
   //MASTER
-  {
+  { //GRAPHICS PIPELINE IN UNITY
     id: "graphics-pipeline",
     categories: ["master"],
     title: "Graphics Pipeline Stages in Unity",
@@ -175,18 +201,18 @@ const projects = [
       <li>Procedural grass, created using geometry and tessellation shaders</li>
       <li>Interactive puddle, simulated in real time solving the 2D wave equation</li>
       </ul>`,
+    template: "Graphics",
     details: {
-      Language: "C#, HLSL",
+      "Programming Language": "C#, HLSL",
       "Date": "May 24, 2026",
-      Platform: "PC",
-      Engine: "Unity"
+      Technologies: "Unity"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Graphics-Pipeline-Stages-in-Unity" }
     ],
     badge: "unity.png",
   },
-  {
+  { //PATH TRACER
     id: "path-tracer",
     categories: ["master"],
     title: "Path Tracer with Nori",
@@ -195,17 +221,18 @@ const projects = [
       `CPU path tracer developed in C++ on top of the Nori educational rendering framework, implementing and studying 
       Monte Carlo techniques for physically based rendering and global illumination. The project was developed incrementally, 
       from sampling and direct lighting to a full path tracer with next-event estimation, multiple importance sampling and microfacet materials.`,
+    template: "Graphics",
     details: {
-      Language: "C++",
+      "Programming Language": "C++",
       "Date": "March 24, 2026",
-      Platform: "PC",
+      Technologies: "Nori",
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Nori-Path-Tracer" }
     ],
     badge: "c++.png",
   },
-  {
+  { //FLUID SIMULATION
     id: "fluid-simulation",
     categories: ["master"],
     title: "Eulerian Fluid Simulation",
@@ -214,17 +241,17 @@ const projects = [
       `Implementation of a 2D eulerian fluid simulator that solves the incompressible Navier-Stokes equations on a staggered (MAC) grid, 
       written in C++. Each time step handles the terms of the equations one at a time: advection, external forces, viscosity and a 
       pressure projection that makes the fluid incompressible. Colored ink is advected along the fluid to visualize the flow.`,
+    template: "Software",
     details: {
-      Language: "C++",
+      "Programming Language": "C++",
       "Date": "March 29, 2026",
-      Platform: "PC",
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation" }
     ],
     badge: "c++.png",
   },
-  {
+  { //BOX FILTERING
     id: "box-filtering",
     categories: ["master"],
     title: "Box-Filtering in CUDA",
@@ -233,17 +260,17 @@ const projects = [
       `GPU image box-filtering project written in CUDA. It applies convolution filters to images and chains several kernels to build a 
       complete Canny Edge Detector, with support for individual filters. It's also used to measure how techniques such as constant memory, 
       shared memory and block size affect performance.`,
+    template: "Software",
     details: {
-      Language: "C++, CUDA",
+      "Programming Language": "C++, CUDA",
       "Date": "April 27, 2026",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA" }
     ],
     badge: "cuda.png",
   },
-  {
+  { //CLOTH SIMULATION
     id: "cloth-simulation",
     categories: ["master"],
     title: "Mass-Spring Systems & Cloth Simulation",
@@ -252,18 +279,18 @@ const projects = [
       `Physically based simulation of mass-spring systems in Unity (C#), from simple node-and-spring setups to full cloth built 
       from triangle meshes. It implements several explicit and implicit integration methods on top of a common multidimensional 
       state formulation, so their stability and behavior can be compared directly.`,
+    template: "Software",
     details: {
-      Language: "C#",
+      "Programming Language": "C#",
       "Date": "February 11, 2026",
-      Platform: "PC",
-      Engine: "Unity"
+      Technologies: "Unity"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Mass-Spring-Cloth-Simulation" }
     ],
     badge: "unity.png",
   },
-  {
+  { //ARTICULATED RB
     id: "articulated-rb",
     categories: ["master"],
     title: "Articulated Rigid Bodies in Unity",
@@ -277,18 +304,18 @@ const projects = [
       <li>Symplectic Euler with strong constraints</li>
       <li>Implicit Euler with weak constraints</li>
       </ul>`,
+    template: "Software",
     details: {
-      Language: "C#",
+      "Programming Language": "C#",
       "Date": "March 02, 2026",
-      Platform: "PC",
-      Engine: "Unity"
+      Technologies: "Unity"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Articulated-Rigid-Bodies-in-Unity" }
     ],
     badge: "unity.png",
   },
-  {
+  { //ALGORITHMS WITH MESHES
     id: "algorithms-meshes",
     categories: ["master"],
     title: "Algorithms with Meshes",
@@ -297,17 +324,17 @@ const projects = [
       `Collection of algorithms with triangle meshes, written in C++ and organized as four Visual Studio projects. 
       They cover mesh statistics, boundary detection with distance fields, and UV parameterization using barycentric mapping,
       using Eigen for both dense and sparse linear algebra.`,
+    template: "Software",
     details: {
-      Language: "C++",
+      "Programming Language": "C++",
       "Date": "October 22, 2025",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Algorithms-with-meshes" }
     ],
     badge: "c++.png",
   },
-  {
+  { //WARPING AND MORPHING
     id: "warping-morphing",
     categories: ["master"],
     title: "Warping and Morphing",
@@ -320,17 +347,17 @@ const projects = [
       <li>Backward warping</li>
       <li>Morphing (applying backward warping)</li>
       </ul>`,
+    template: "Software",
     details: {
-      Language: "MATLAB",
+      "Programming Language": "MATLAB",
       "Date": "December 02, 2025",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Warping-Morphing" }
     ],
     badge: "matlab.png",
   },
-  {
+  { //INVERSE KINEMATICS
     id: "inverse-kinematics",
     categories: ["master"],
     title: "Inverse Kinematics",
@@ -340,17 +367,17 @@ const projects = [
       The goal is for the end effector of the arm to reach a random target position, different on every execution.
       It uses a numerically computed Jacobian and its pseudoinverse to update the joint angles in 
       small incremental steps until the target is reached.`,
+    template: "Software",
     details: {
-      Language: "MATLAB",
+      "Programming Language": "MATLAB",
       "Date": "December 18, 2026",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Inverse-Kinematics" }
     ],
     badge: "matlab.png",
   },
-  {
+  { //EMOJI CLASSIFIER
     id: "emoji-classifier",
     categories: ["master"],
     title: "Emoji Classifier",
@@ -361,17 +388,17 @@ const projects = [
       training a network that generalizes rather than memorizes.
       <br><br>
       The results obtained were satisfactory, reaching 0.1 validation loss and 95% accuracy in the best runs.`,
+    template: "Software",
     details: {
-      Language: "Python",
+      "Programming Language": "Python",
       "Date": "November 25, 2025",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Emoji-Classification-CNN" }
     ],
     badge: "python.png",
   },
-  {
+  { //TRACKING AND STEREOSCOPY
     id: "tracking-stereoscopy",
     categories: ["master"],
     title: "Tracking and Stereoscopy",
@@ -381,17 +408,17 @@ const projects = [
       ArUco markers are detected by the webcam and tracked to control the position and rotation of the virtual camera. 
       <br><br>
       The scene can be rendered in stereo using two different methods, <i>toe-in</i> and <i>off-axis</i>, with red/blue anaglyph filters.`,
+    template: "Software",
     details: {
-      Language: "C++",
+      "Programming Language": "C++",
       "Date": "November 30, 2025",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy" }
     ],
     badge: "c++.png",
   },
-  {
+  { //TONEMAPPING 
     id: "tonemapping-cuda",
     categories: ["master"],
     title: "Tone Mapping in CUDA",
@@ -399,10 +426,10 @@ const projects = [
     description:
       `GPU implementation of the histogram-based stage of HDR tone mapping, written in CUDA. 
       Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
+    template: "Software",
     details: {
-      Language: "C++, CUDA",
+      "Programming Language": "C++, CUDA",
       "Date": "April 13, 2026",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA" }
@@ -411,7 +438,7 @@ const projects = [
   },
 
   //JAMS:
-  {
+  { //THE OTHER SIDE
     id: "the-other-side",
     categories: ["jams"],
     title: "The Other Side",
@@ -419,6 +446,7 @@ const projects = [
     description:
       `A horror and suspense game in which the player must solve puzzles by alternating between 
       reality and <b>"the other side"</b>; a dark realm where they can only navigate by sound.`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Puzzle, Suspense",
@@ -432,7 +460,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //REGRETS & COMPLAINTS
     id: "regrets-and-complaints",
     categories: ["jams"],
     title: "Regrets & Complaints",
@@ -441,6 +469,7 @@ const projects = [
       `<b>Regrets & Complaints</b> is a purely narrative experience that explores the relentless passage of time, 
       depicting how different characters grow, age, and eventually die amid regrets and complaints. 
       It emphasizes storytelling and character development within the constraints of time.`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Narrative Adventure",
@@ -454,7 +483,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //KUKO
     id: "kuko",
     categories: ["jams"],
     title: "Kuko",
@@ -463,6 +492,7 @@ const projects = [
       `<b>Kuko</b> is a 2D pixel art platformer where the player controls a baby dragon lost in a cave inhabited 
       by evil humans who want to hunt him.
       <br><br>This game is my first project in Unity, which allowed me to learn the engine's most basic aspects on my own.`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Platformer",
@@ -476,7 +506,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //JULIAN
     id: "julian",
     categories: ["jams"],
     title: "Julián.",
@@ -485,6 +515,7 @@ const projects = [
       `Julián is a young man notable for his lack of a sense of danger and his passion for Real Betis football club, who is kidnapped
       just before a Real Madrid vs. Betis match. To escape, he is forced to complete a series of challenges governed by three rules.
       <br><br>Will he manage to break free and make it back in time for the game?`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Graphic Adventure",
@@ -500,7 +531,7 @@ const projects = [
   },
 
   //DEGREE
-  {
+  { //KOCUBE
     id: "kocube",
     categories: ["degree"],
     title: "KO Cube",
@@ -511,6 +542,7 @@ const projects = [
       <br><br>
       The game features six unique characters, each with a passive ability, basic attack and an ultimate ability. Characters are divided into three 
       playstyles: <i>Tank</i>, <i>DPS</i>, and <i>Healer</i>, with three different skins per character available for purchase in the store.`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Hero Shooter",
@@ -523,7 +555,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //INDIE STUDIO 
     id: "indie-studio",
     categories: ["degree"],
     title: "Indie Studio Simulator",
@@ -534,6 +566,7 @@ const projects = [
       <br><br>
       The project focuses on implementing AI systems capable of generating autonomous behaviors and emergent situations using
       <i>Finite State Machines</i>, <i>Behavior Trees</i> and <i>Utility Systems</i>`,
+    template: "Games",
     details: {
       Language: "English",
       Genre: "Simulation",
@@ -546,7 +579,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //TINPCT
     id: "tinpct",
     categories: ["degree"],
     title: "Trouble in NPC Town",
@@ -554,9 +587,10 @@ const projects = [
     description:
       `Asymmetric 2-player browser game made with Phaser, where one player pretends to be an NPC and the other has to find and shoot them. 
       The game uses a Spring Boot server with a <b>REST API</b> for user accounts and <b>WebSockets</b> for the real-time game logic.`,
+    template: "Games",
     details: {
-      "Game Language": "English",
-      "Programming Languages": "JavaScript, Java",
+      "Language": "English",
+      "Programming Language": "JavaScript, Java",
       "Release Date": "January 24, 2024",
       Platform: "PC (browser)",
       Frameworks: "Phaser, Spring Boot"
@@ -567,7 +601,7 @@ const projects = [
     ],
     badge: "phaser.png",
   },
-  {
+  { //CUESTION DE PINOS
     id: "cuestion-de-pinos",
     categories: ["degree"],
     title: "Cuestión de Piños",
@@ -577,6 +611,7 @@ const projects = [
       Experience his story across three chapters, each played through a different character's eyes.
       <br><br> 
       Your choices shape the plot and lead to multiple endings. Will Mario find love, or a cold and cruel fate?`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Virtual Reality, Interactive Story",
@@ -589,7 +624,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-    {
+  { //SKYLINE
     id: "skyline-express",
     categories: ["degree"],
     title: "Skyline Express",
@@ -602,6 +637,7 @@ const projects = [
       The game features three different game modes: <i>Gyro Mode</i>, in which the train is controlled using the phone's gyroscope, 
       <i>Head Mode</i>, in which players control the train by tilting their head (via face tracking), and <i>Machinist Mode</i>,
       which sets the camera to the machinist's point of view and adds vertical movement (also via the gyroscope).`,
+    template: "Games",
     details: {
       Language: "English",
       Genre: "Endless Runner",
@@ -614,7 +650,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //MISSILE RALLY
     id: "missile-rally",
     categories: ["degree"],
     title: "Missile Rally",
@@ -625,6 +661,7 @@ const projects = [
       <br><br>
       It is my first multiplayer project in Unity,
       built with the <i>Netcode for GameObjects</i> framework and <i>Unity Relay</i>, using a listen server architecture.`,
+    template: "Games",
     details: {
       Language: "Spanish",
       Genre: "Racing",
@@ -637,7 +674,7 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  {
+  { //PATHFINDING
     id: "pathfinding",
     categories: ["degree"],
     title: "Pathfinding & Reinforcement Learning",
@@ -648,18 +685,18 @@ const projects = [
       <li>Reinforcement learning with Q-Learning: a pre-trained agent avoids getting caught by an NPC that chases him</li>
       <li>Pathfinding with A* and a Horizon Search: maze solver with enemies that have to be caught before exiting the maze</li>
       </ul>`,
+    template: "Software",
     details: {
-      Language: "C#",
+      "Programming Language": "C#",
       "Date": "January 19, 2024",
-      Platform: "PC",
-      Engine: "Unity"
+      Technologies: "Unity"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Pathfinding-and-Q-Learning" }
     ],
     badge: "unity.png",
   },
-  {
+  { //SPACE INVADERS
     id: "space-invaders",
     categories: ["degree"],
     title: "Space Invaders in Own Game Engine",
@@ -668,17 +705,17 @@ const projects = [
       `Very small and simple game engine written in C++ with OpenGL and GLUT, on top of which a Space Invaders 
       own simplified implementation has been built. The engine provides a scene system, an .obj model loader and a 
       fixed-timestep game loop, while the game itself is implemented as a set of scripts that use it.`,
+    template: "Software",
     details: {
-      Language: "C++",
+      "Programming Language": "C++",
       "Date": "November 23, 2022",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Space-Invaders-in-Own-Game-Engine" }
     ],
     badge: "c++.png",
   },
-  {
+  { //GAME OF LIFE
     id: "gameoflife",
     categories: ["degree"],
     title: "Game of Life",
@@ -686,17 +723,17 @@ const projects = [
     description:
       `Interactive implementation of John Conway's Game of Life in JavaScript, drawn on an HTML canvas. The world is a square 
       grid of cells that live or die in each step according to the number of living neighbors they have.`,
+    template: "Software",
     details: {
-      Language: "JavaScript",
+      "Programming Language": "JavaScript",
       "Date": "December 03, 2022",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
     ],
     badge: "javascript.png",
   },
-  {
+  { //ARKANOID
     id: "arkanoid",
     categories: ["degree"],
     title: "Arkanoid in Assembly",
@@ -704,17 +741,17 @@ const projects = [
     description:
       `Simplified Arkanoid clone written in MIPS assembly for the MARS 4.5 simulator. The game is drawn on the Bitmap 
       Display and controlled through the Keyboard and Display MMIO Simulator.`,
+    template: "Software",
     details: {
-      Language: "Assembly",
+      "Programming Language": "Assembly",
       "Date": "May 23, 2023",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Arkanoid-in-Assembly" }
     ],
     badge: "assembly.png",
   },
-  {
+  { //BINGO
     id: "bingo",
     categories: ["degree"],
     title: "Bingo Simulator",
@@ -729,17 +766,17 @@ const projects = [
       <li>Sorted Linked List</li>
       <li>Set</li>
       </ul>`,
+    template: "Software",
     details: {
-      Language: "Java",
+      "Programming Language": "Java",
       "Date": "June 15, 2022",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Bingo-Simulator" }
     ],
     badge: "java.png",
   },
-  {
+  { //PROCESSING
     id: "processing",
     categories: ["degree"],
     title: "Physics in Processing",
@@ -748,10 +785,10 @@ const projects = [
       `Collection of physics simulations for the course Physics in Video Games, implemented in Processing (Java mode). 
       Each sketch focuses on a different family of techniques: numerical integration, mass-spring systems, 
       penalty-based contact and impulse-based rigid body collisions.`,
+    template: "Software",
     details: {
-      Language: "Processing",
+      "Programming Language": "Processing",
       "Date": "December 12, 2021",
-      Platform: "PC"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Physics-in-Processing" }
