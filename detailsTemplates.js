@@ -6,29 +6,44 @@ const TEMPLATES = /** @type {const} */ ({
         "Release Date",
         "Platform",
         "Engine",
+        "Programming Language",
+        "Frameworks",
+        "Technologies",
+        "Jam Duration",
+        "Ranking Obtained",
+        "Showcased At",
+        "Team Size",
+        "My Role",
+    ],
+
+    Apps: [
+        "Language",
+        "Status",
+        "Release Date",
+        "Operating System",
+        "Engine",
         "Frameworks",
         "Programming Language",
-        "Jam Duration",
-        "Ranking",
-        "Showcased At",
-        "Team size",
-        "My role",
+        "Team Size",
+        "My Role",
     ],
 
     Graphics: [
         "Graphics API",
         "Programming Language",
         "Shading Language",
+        "Technologies",
         "Date",
-        "Technologies"
+        "Team Size",
+        "My Role"
     ],
 
     Software: [
         "Programming Language",
-        "Date",
         "Technologies",
-        "Team size",
-        "My role"
+        "Date",
+        "Team Size",
+        "My Role"
     ], 
 });
 

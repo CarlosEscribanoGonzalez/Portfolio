@@ -37,7 +37,12 @@ const projects = [
       Genre: "Competitive Typing, Deck-Builder",
       Status: "In active development",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Frameworks: "Netcode for GameObjects",
+      "Showcased At": "CyL Games Show 2026; Guerrilla Game Festival 2026; DEVOTION Game Fest 2026",
+      "Team Size": "6",
+      "My Role": "Game Designer, Gameplay/UI Programmer & Shader Artist"
     },
     links: [
       { label: "Play", url: "https://typtyp-studios.itch.io/mechanoccult" }
@@ -63,7 +68,9 @@ const projects = [
       Genre: "Simulation",
       "Release Date": "July 21, 2026",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Technologies: "Whisper (STT), Gemini (LLM), ElevenLabs (TTS)"
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/la-cacharrera" }
@@ -89,7 +96,8 @@ const projects = [
       Genre: "Escape Room",
       "Release Date": "January 19, 2026",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/patterns" }
@@ -115,12 +123,14 @@ const projects = [
       <b>Play online or offline</b>.
       Take your games with you. Whether you're at home, with friends, or on the go, 
       ARTabletop lets you enjoy your favorite games in both online and offline sessions.`,
-    template: "Games",
+    template: "Apps",
     details: {
       Language: "English",
       "Release Date": "July 08, 2025",
-      Platform: "Android",
-      Engine: "Unity"
+      "Operating System": "Android",
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Frameworks: "ARCore, AR Foundation",
     },
     links: [
       { label: "Download", url: "https://karesito.itch.io/artabletop" }
@@ -148,9 +158,10 @@ const projects = [
     template: "Graphics",
     details: {
       "Graphics API": "Vulkan",
-      "Programming Language": "C++, GLSL",
+      "Programming Language": "C++",
+      "Shading Language": "GLSL",
       "Date": "May 20, 2026",
-      //TECHNOLOGIES FALTA
+      Technologies: "GLFW, GLM, ImGUI"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Techniques-in-Vulkan" }
@@ -176,8 +187,10 @@ const projects = [
     template: "Graphics",
     details: {
       "Graphics API": "OpenGL",
-      "Programming Language": "C++, GLSL",
+      "Programming Language": "C++",
+      "Shading Language": "GLSL",
       "Date": "January 01, 2026",
+      Technologies: "GLUT, GLEW, GLM, ImGUI"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Rendering-Engine" }
@@ -203,9 +216,12 @@ const projects = [
       </ul>`,
     template: "Graphics",
     details: {
-      "Programming Language": "C#, HLSL",
+      "Programming Language": "C#",
+      "Shading Language": "HLSL",
       "Date": "May 24, 2026",
-      Technologies: "Unity"
+      Technologies: "Unity",
+      "Team Size": "2",
+      "My Role": "Sole Graphics Programmer"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Graphics-Pipeline-Stages-in-Unity" }
@@ -262,8 +278,9 @@ const projects = [
       shared memory and block size affect performance.`,
     template: "Software",
     details: {
-      "Programming Language": "C++, CUDA",
+      "Programming Language": "C++",
       "Date": "April 27, 2026",
+      Technologies: "CUDA"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA" }
@@ -283,7 +300,7 @@ const projects = [
     details: {
       "Programming Language": "C#",
       "Date": "February 11, 2026",
-      Technologies: "Unity"
+      Technologies: "Unity, Math.NET Numerics"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Mass-Spring-Cloth-Simulation" }
@@ -308,7 +325,7 @@ const projects = [
     details: {
       "Programming Language": "C#",
       "Date": "March 02, 2026",
-      Technologies: "Unity"
+      Technologies: "Unity, Math.NET Numerics"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Articulated-Rigid-Bodies-in-Unity" }
@@ -328,6 +345,7 @@ const projects = [
     details: {
       "Programming Language": "C++",
       "Date": "October 22, 2025",
+      Technologies: "Eigen"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Algorithms-with-meshes" }
@@ -392,6 +410,7 @@ const projects = [
     details: {
       "Programming Language": "Python",
       "Date": "November 25, 2025",
+      Technologies: "PyTorch"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Emoji-Classification-CNN" }
@@ -412,6 +431,7 @@ const projects = [
     details: {
       "Programming Language": "C++",
       "Date": "November 30, 2025",
+      Technologies: "OpenCV, ArUco, OpenGL"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy" }
@@ -428,8 +448,9 @@ const projects = [
       Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
     template: "Software",
     details: {
-      "Programming Language": "C++, CUDA",
+      "Programming Language": "C++",
       "Date": "April 13, 2026",
+      Technologies: "CUDA"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA" }
@@ -452,8 +473,10 @@ const projects = [
       Genre: "Puzzle, Suspense",
       "Release Date": "October 27, 2024",
       "Jam Duration": "20 days",
+      "Ranking Obtained": "Third",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/the-other-side" }
@@ -475,8 +498,13 @@ const projects = [
       Genre: "Narrative Adventure",
       "Release Date": "March 23, 2024",
       "Jam Duration": "15 days",
+      "Ranking Obtained": "Second",
+      "Showcased At": "Indie Dev Day 2024",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      "Team Size": "5",
+      "My Role": "Lead Programmer & Lead Narrative Designer"
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/regrets-n-complaints" }
@@ -499,7 +527,10 @@ const projects = [
       "Release Date": "October 18, 2022",
       "Jam Duration": "18 days",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      "Team Size": "4",
+      "My Role": "Lead Programmer"
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/kuko" }
@@ -522,7 +553,9 @@ const projects = [
       "Release Date": "February 08, 2022",
       "Jam Duration": "3 days",
       Platform: "PC",
-      Engine: "Adventure Game Studio"
+      Engine: "Adventure Game Studio",
+      "Team Size": "4",
+      "My Role": "Programmer & Narrative Designer"
     },
     links: [
       { label: "Play", url: "https://guajiro0.itch.io/julian" }
@@ -548,7 +581,11 @@ const projects = [
       Genre: "Hero Shooter",
       "Release Date": "December 12, 2024",
       Platform: "Web (PC & Mobile)",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Frameworks: "Netcode for GameObjects", 
+      "Team Size": "5",
+      "My Role": "Lead Programmer & Narrative Designer"
     },
     links: [
       { label: "Play", url: "https://flatwall-games.itch.io/kocube" }
@@ -572,7 +609,10 @@ const projects = [
       Genre: "Simulation",
       "Release Date": "December 18, 2024",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      "Team Size": "5",
+      "My Role": "Programmer & Technical Artist (shaders & VFX)"
     },
     links: [
       { label: "Play", url: "https://flatwall-games.itch.io/indie-studio-simulator" }
@@ -590,10 +630,13 @@ const projects = [
     template: "Games",
     details: {
       "Language": "English",
+      "Genre": "Hide-and-seek",
       "Programming Language": "JavaScript, Java",
       "Release Date": "January 24, 2024",
-      Platform: "PC (browser)",
-      Frameworks: "Phaser, Spring Boot"
+      Platform: "Web (PC)",
+      Frameworks: "Phaser, Spring Boot",
+      "Team Size": "3",
+      "My Role": "Gameplay Programmer, Backend Developer & WebSocket Developer"
     },
     links: [
       { label: "View on GitHub (online version)", url: "https://github.com/CarlosEscribanoGonzalez/Trouble-in-NPC-Town" },
@@ -616,8 +659,10 @@ const projects = [
       Language: "Spanish",
       Genre: "Virtual Reality, Interactive Story",
       "Release Date": "May 23, 2024",
-      Platform: "PC",
-      Engine: "Unity"
+      Platform: "PC (VR)",
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Frameworks: "XR Interaction Toolkit"
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/cuestin-de-pinos" }
@@ -643,7 +688,11 @@ const projects = [
       Genre: "Endless Runner",
       "Release Date": "January 20, 2025",
       Platform: "Android",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Frameworks: "ARCore, AR Foundation",
+      "Team Size": "5",
+      "My Role": "Programmer, Technical Artist (shaders) & AR Integration"
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/skyline-express-totally-accurate-and-reliable-flying-train-service-simulator" }
@@ -667,7 +716,9 @@ const projects = [
       Genre: "Racing",
       "Release Date": "May 13, 2024",
       Platform: "PC",
-      Engine: "Unity"
+      Engine: "Unity",
+      "Programming Language": "C#",
+      Frameworks: "Netcode for GameObjects"
     },
     links: [
       { label: "Play", url: "https://karesito.itch.io/missile-rally" }
@@ -709,6 +760,7 @@ const projects = [
     details: {
       "Programming Language": "C++",
       "Date": "November 23, 2022",
+      "Team Size": "2"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Space-Invaders-in-Own-Game-Engine" }
