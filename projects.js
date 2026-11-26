@@ -1,28 +1,38 @@
 // @ts-check
 /**
- * @typedef {{ [K in keyof Templates]: {
- *   template: K,
- *   details?: { [F in Templates[K][number]]?: string }
- * } }[keyof Templates]} TemplateDetails
- *
- * @typedef {{
- *   id: string,
- *   categories: ("featured"|"master"|"jams"|"degree")[],
- *   title: string,
- *   subtitle: string,
- *   folder?: string,
- *   description: string,
- *   links?: { label: string, url: string }[],
- *   badge?: string,
- *   badgePosition?: "left" | "bottom-left" | "bottom"
- * } & TemplateDetails} Project
- */
+* @typedef {{ [K in keyof Templates]: {
+*   template: K,
+*   details?: { [F in Templates[K][number]]?: string }
+* } }[keyof Templates]} TemplateDetails
+*
+* @typedef {{
+*   id: string,
+*   categories: {
+*     academic: ("featured"|"master"|"jams"|"degree"),
+*     language: string,
+*     type: ("game"|"app"|"graphics"|"simulation"|"other"),
+*     date: string
+*   },
+*   title: string,
+*   subtitle: string,
+*   folder?: string,
+*   description: string,
+*   links?: { label: string, url: string }[],
+*   badge?: string,
+*   badgePosition?: "left" | "bottom-left" | "bottom"
+* } & TemplateDetails} Project
+*/
 
 /** @type {Project[]} */
 const projects = [
   { //MECHANOCCULT
     id: "mechanoccult",
-    categories: ["featured"],
+    categories: {
+      academic: "featured",
+      language: "C#",
+      type: "game",
+      date: "In active development"
+    },
     title: "Mechanoccult",
     subtitle: "Typing & Deckbuilding PVP game",
     description:
@@ -51,7 +61,12 @@ const projects = [
   },
   { //LA CACHARRERA
     id: "la-cacharrera",
-    categories: ["featured"],
+    categories: {
+      academic: "featured",
+      language: "C#",
+      type: "game",
+      date: "2026"
+    },
     title: "La Cacharrera",
     subtitle: "Telemarketer simulator with AI powered NPCs",
     description:
@@ -79,7 +94,12 @@ const projects = [
   },
   { //PATTERNS
     id: "patterns",
-    categories: ["featured"],
+    categories: {
+      academic: "featured",
+      language: "C#",
+      type: "game",
+      date: "2026"
+    },
     title: "Patterns",
     subtitle: "Programming pattern-based escape room",
     description:
@@ -106,7 +126,12 @@ const projects = [
   },
   { //ARTABLETOP
     id: "artabletop",
-    categories: ["featured"],
+    categories: {
+      academic: "featured",
+      language: "C#",
+      type: "app",
+      date: "2025"
+    },
     title: "ARTabletop",
     subtitle: "Bring your favorite tabletop games to life with augmented reality",
     description:
@@ -139,7 +164,12 @@ const projects = [
   },
   { //RENDERING TECHNIQUES
     id: "rendering-techniques",
-    categories: ["featured"],
+    categories: {
+      academic: "featured",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
     title: "Rendering techniques",
     subtitle: "Real-time rendering techiques in Vulkan on a deferred pipeline",
     description:
@@ -170,7 +200,12 @@ const projects = [
   },
   { //RENDERING ENGINE
     id: "opengl-engine",
-    categories: ["featured"],
+    categories: {
+      academic: "featured",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
     title: "Rendering Engine",
     subtitle: "Real-time rendering engine in OpenGL",
     description:
@@ -201,7 +236,12 @@ const projects = [
   //MASTER
   { //GRAPHICS PIPELINE IN UNITY
     id: "graphics-pipeline",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C#",
+      type: "graphics",
+      date: "2026"
+    },
     title: "Graphics Pipeline Stages in Unity",
     subtitle: "Geometry, tessellation and compute shaders in Unity",
     description:
@@ -230,7 +270,12 @@ const projects = [
   },
   { //PATH TRACER
     id: "path-tracer",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
     title: "Path Tracer with Nori",
     subtitle: "Path tracing techniques implemented in C++ with Nori",
     description:
@@ -250,7 +295,12 @@ const projects = [
   },
   { //FLUID SIMULATION
     id: "fluid-simulation",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "simulation",
+      date: "2026"
+    },
     title: "Eulerian Fluid Simulation",
     subtitle: "2D simulation of an eulerian fluid (gas) in C++",
     description:
@@ -269,14 +319,19 @@ const projects = [
   },
   { //BOX FILTERING
     id: "box-filtering",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
     title: "Box-Filtering in CUDA",
     subtitle: "GPU image box-filtering project implemented in C++ with CUDA",
     description:
       `GPU image box-filtering project written in CUDA. It applies convolution filters to images and chains several kernels to build a 
       complete Canny Edge Detector, with support for individual filters. It's also used to measure how techniques such as constant memory, 
       shared memory and block size affect performance.`,
-    template: "Software",
+    template: "Graphics",
     details: {
       "Programming Language": "C++",
       "Date": "April 27, 2026",
@@ -289,7 +344,12 @@ const projects = [
   },
   { //CLOTH SIMULATION
     id: "cloth-simulation",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C#",
+      type: "simulation",
+      date: "2026"
+    },
     title: "Mass-Spring Systems & Cloth Simulation",
     subtitle: "Physically based simulation of mass-spring systems and cloth in Unity",
     description:
@@ -309,7 +369,12 @@ const projects = [
   },
   { //ARTICULATED RB
     id: "articulated-rb",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C#",
+      type: "simulation",
+      date: "2026"
+    },
     title: "Articulated Rigid Bodies in Unity",
     subtitle: "Simulation of articulated rigid bodies connected through point constraints in Unity",
     description:
@@ -334,7 +399,12 @@ const projects = [
   },
   { //ALGORITHMS WITH MESHES
     id: "algorithms-meshes",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "other",
+      date: "2025"
+    },
     title: "Algorithms with Meshes",
     subtitle: "Structures and algorithms with triangle meshes in C++",
     description:
@@ -354,7 +424,12 @@ const projects = [
   },
   { //WARPING AND MORPHING
     id: "warping-morphing",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "MATLAB",
+      type: "other",
+      date: "2025"
+    },
     title: "Warping and Morphing",
     subtitle: "Image warping and morphing in MATLAB",
     description:
@@ -377,7 +452,12 @@ const projects = [
   },
   { //INVERSE KINEMATICS
     id: "inverse-kinematics",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "MATLAB",
+      type: "other",
+      date: "2025"
+    },
     title: "Inverse Kinematics",
     subtitle: "Inverse kinematics on a 2D articulated arm in MATLAB",
     description:
@@ -388,7 +468,7 @@ const projects = [
     template: "Software",
     details: {
       "Programming Language": "MATLAB",
-      "Date": "December 18, 2026",
+      "Date": "December 18, 2025",
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Inverse-Kinematics" }
@@ -397,7 +477,12 @@ const projects = [
   },
   { //EMOJI CLASSIFIER
     id: "emoji-classifier",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "Python",
+      type: "other",
+      date: "2025"
+    },
     title: "Emoji Classifier",
     subtitle: "Emoji classification in Python using a Convolutional Neural Network",
     description:
@@ -419,7 +504,12 @@ const projects = [
   },
   { //TRACKING AND STEREOSCOPY
     id: "tracking-stereoscopy",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "other",
+      date: "2025"
+    },
     title: "Tracking and Stereoscopy",
     subtitle: "Tracking and stereoscopy in C++ using ArUco libraries",
     description:
@@ -440,13 +530,18 @@ const projects = [
   },
   { //TONEMAPPING 
     id: "tonemapping-cuda",
-    categories: ["master"],
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
     title: "Tone Mapping in CUDA",
     subtitle: "Parallel image tone mapping with CUDA",
     description:
       `GPU implementation of the histogram-based stage of HDR tone mapping, written in CUDA. 
       Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
-    template: "Software",
+    template: "Graphics",
     details: {
       "Programming Language": "C++",
       "Date": "April 13, 2026",
@@ -461,7 +556,12 @@ const projects = [
   //JAMS:
   { //THE OTHER SIDE
     id: "the-other-side",
-    categories: ["jams"],
+    categories: {
+      academic: "jams",
+      language: "C#",
+      type: "game",
+      date: "2024"
+    },
     title: "The Other Side",
     subtitle: "Navigate with sound and solve puzzles",
     description:
@@ -485,7 +585,12 @@ const projects = [
   },
   { //REGRETS & COMPLAINTS
     id: "regrets-and-complaints",
-    categories: ["jams"],
+    categories: {
+      academic: "jams",
+      language: "C#",
+      type: "game",
+      date: "2024"
+    },
     title: "Regrets & Complaints",
     subtitle: "A game about life, time, regrets & complaints",
     description:
@@ -513,7 +618,12 @@ const projects = [
   },
   { //KUKO
     id: "kuko",
-    categories: ["jams"],
+    categories: {
+      academic: "jams",
+      language: "C#",
+      type: "game",
+      date: "2022"
+    },
     title: "Kuko",
     subtitle: "My very first Unity project",
     description:
@@ -539,7 +649,12 @@ const projects = [
   },
   { //JULIAN
     id: "julian",
-    categories: ["jams"],
+    categories: {
+      academic: "jams",
+      language: "AGS Script",
+      type: "game",
+      date: "2022"
+    },
     title: "Julián.",
     subtitle: "My very first game and jam participation",
     description:
@@ -566,7 +681,12 @@ const projects = [
   //DEGREE
   { //KOCUBE
     id: "kocube",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C#",
+      type: "game",
+      date: "2024"
+    },
     title: "KO Cube",
     subtitle: "Top-down 3v3 multiplayer hero shooter",
     description:
@@ -594,7 +714,12 @@ const projects = [
   },
   { //INDIE STUDIO 
     id: "indie-studio",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C#",
+      type: "game",
+      date: "2024"
+    },
     title: "Indie Studio Simulator",
     subtitle: "Living colony simulation using FSMs, Behavior Trees & Utility Systems",
     description:
@@ -621,7 +746,12 @@ const projects = [
   },
   { //TINPCT
     id: "tinpct",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "JavaScript",
+      type: "game",
+      date: "2024"
+    },
     title: "Trouble in NPC Town",
     subtitle: "Asymmetric 2-player online browser game made with Phaser",
     description:
@@ -646,7 +776,12 @@ const projects = [
   },
   { //CUESTION DE PINOS
     id: "cuestion-de-pinos",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C#",
+      type: "game",
+      date: "2024"
+    },
     title: "Cuestión de Piños",
     subtitle: "Narrative-driven video game in virtual reality",
     description:
@@ -671,7 +806,12 @@ const projects = [
   },
   { //SKYLINE
     id: "skyline-express",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C#",
+      type: "game",
+      date: "2025"
+    },
     title: "Skyline Express",
     subtitle: "Endless Runner for Android with AR features",
     description:
@@ -701,7 +841,12 @@ const projects = [
   },
   { //MISSILE RALLY
     id: "missile-rally",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C#",
+      type: "game",
+      date: "2024"
+    },
     title: "Missile Rally",
     subtitle: "Multiplayer racing game for up to four players",
     description:
@@ -727,7 +872,12 @@ const projects = [
   },
   { //PATHFINDING
     id: "pathfinding",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C#",
+      type: "other",
+      date: "2024"
+    },
     title: "Pathfinding & Reinforcement Learning",
     subtitle: "Q-Learning, A* and Horizon Search in Unity",
     description:
@@ -749,17 +899,22 @@ const projects = [
   },
   { //SPACE INVADERS
     id: "space-invaders",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "C++",
+      type: "game",
+      date: "2022"
+    },
     title: "Space Invaders in Own Game Engine",
     subtitle: "Space Invaders implemented in a custom, simple game engine developed in C++",
     description:
       `Very small and simple game engine written in C++ with OpenGL and GLUT, on top of which a Space Invaders 
       own simplified implementation has been built. The engine provides a scene system, an .obj model loader and a 
       fixed-timestep game loop, while the game itself is implemented as a set of scripts that use it.`,
-    template: "Software",
+    template: "Games",
     details: {
       "Programming Language": "C++",
-      "Date": "November 23, 2022",
+      "Release Date": "November 23, 2022",
       "Team Size": "2"
     },
     links: [
@@ -769,16 +924,21 @@ const projects = [
   },
   { //GAME OF LIFE
     id: "gameoflife",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "JavaScript",
+      type: "game",
+      date: "2022"
+    },
     title: "Game of Life",
     subtitle: "Own implementation of Conway's Game of Life in JavaScript",
     description:
       `Interactive implementation of John Conway's Game of Life in JavaScript, drawn on an HTML canvas. The world is a square 
       grid of cells that live or die in each step according to the number of living neighbors they have.`,
-    template: "Software",
+    template: "Games",
     details: {
       "Programming Language": "JavaScript",
-      "Date": "December 03, 2022",
+      "Release Date": "December 03, 2022",
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
@@ -787,7 +947,12 @@ const projects = [
   },
   { //ARKANOID
     id: "arkanoid",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "Assembly",
+      type: "game",
+      date: "2023"
+    },
     title: "Arkanoid in Assembly",
     subtitle: "Simplified Arkanoid clone written in MIPS assembly",
     description:
@@ -805,7 +970,12 @@ const projects = [
   },
   { //BINGO
     id: "bingo",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "Java",
+      type: "other",
+      date: "2022"
+    },
     title: "Bingo Simulator",
     subtitle: "Bingo simulator developed in Java",
     description:
@@ -830,7 +1000,12 @@ const projects = [
   },
   { //PROCESSING
     id: "processing",
-    categories: ["degree"],
+    categories: {
+      academic: "degree",
+      language: "Processing",
+      type: "simulation",
+      date: "2021"
+    },
     title: "Physics in Processing",
     subtitle: "Physics calculations in computers using Processing",
     description:

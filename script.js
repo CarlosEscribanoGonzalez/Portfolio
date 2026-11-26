@@ -164,52 +164,45 @@ function setModalImage(url) {
   });
 }
 
-function renderSection(containerId, category) {
-  const container = document.getElementById(containerId);
-  if (!container) {
-    console.warn(`No element found for id="${containerId}"`);
-    return;
-  }
-
-  const filtered = projects.filter((p) => p.categories.includes(category));
-
-  if (filtered.length === 0) {
-    container.innerHTML = `<p class="empty-note">There are no projects yet in "${category}".</p>`;
-    return;
-  }
-
-  container.innerHTML = filtered
-    .map(
-      (p) => `
-      <div class="project-card" data-project-id="${p.id}">
+function createCard(p) {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = `
+    <div class="project-card" data-project-id="${p.id}">
       <div class="project-cover">
-        <img class="project-thumb" data-folder="${p.folder}" alt="${p.title}">
+        <img class="project-thumb" alt="${p.title}">
         ${p.badge ? `<img class="project-badge${p.badgePosition ? ` ${p.badgePosition}` : ""}" src="assets/logos/${p.badge}" alt="">` : ""}
       </div>
       <div class="project-caption">
         <div class="project-title">${p.title}</div>
         <div class="project-subtitle">${p.subtitle}</div>
       </div>
-    </div>
-      `
-    )
-    .join("");
+    </div>`;
+  const card = wrapper.firstElementChild;
+  const img = card.querySelector(".project-thumb");
 
-    container.querySelectorAll(".project-thumb").forEach((img) => {
-      coverPromises.push((async () => {
-        const p = projects.find((x) => x.id === img.closest("[data-project-id]").dataset.projectId);
-        const url = coverUrl(p) || (await probeImage(`${img.dataset.folder}/portrait`));
-        if (!url) return;
-        img.dataset.cover = url;
-        img.src = url;
-        await whenLoaded(url);
-      })());
-    });
+  coverPromises.push((async () => {
+    const url = coverUrl(p) || (await probeImage(`${p.folder}/portrait`));
+    if (!url) return;
+    img.dataset.cover = url;
+    img.src = url;
+    await whenLoaded(url);
+  })());
 
-    container.querySelectorAll(".project-card").forEach((card) => {
-      card.addEventListener("mouseenter", () => startHoverPreview(card));
-      card.addEventListener("mouseleave", () => stopHoverPreview(card));
-    });
+  card.addEventListener("mouseenter", () => startHoverPreview(card));
+  card.addEventListener("mouseleave", () => stopHoverPreview(card));
+
+  return card;
+}
+
+function renderSection(container, list) {
+  container.innerHTML = "";
+
+  if (list.length === 0) {
+    container.innerHTML = `<p class="empty-note">There are no projects yet.</p>`;
+    return;
+  }
+
+  list.forEach((p) => container.appendChild(createCard(p)));
 }
 
 async function openProjectModal(projectId) {
@@ -302,9 +295,65 @@ function validateProjects() {
 }
 validateProjects();
 
-//Sections:
-renderSection("featured-grid", "featured");
-renderSection("master-grid", "master");
-renderSection("jams-grid", "jams");
-renderSection("degree-grid", "degree");
+//Sections & sorting:
+const IN_PROGRESS = "in active development";
+const SORTS = {
+  academic: {
+    order: ["featured", "master", "jams", "degree"],
+    titles: { featured: "Featured", master: "Master's Degree", jams: "Game jams", degree: "Bachelor's Degree" },
+  },
+  type: {
+    order: ["game", "app", "graphics", "simulation", "other"],
+    titles: { game: "Games", app: "Apps", graphics: "Graphics",
+              simulation: "Physics & Simulation", other: "Other software" },
+  },
+  language: { order: null, titles: {} },
+  date:     { order: null, titles: {} },
+};
+function dateRank(value) {
+  return value.trim().toLowerCase() === IN_PROGRESS ? Infinity : Number(value);
+}
+const newestFirst = (a, b) => dateRank(b) - dateRank(a);
+
+function getGroupKeys(dimension) {
+  const { order } = SORTS[dimension];
+  const present = new Set(projects.map((p) => p.categories[dimension]));
+
+  if (order) return order.filter((k) => present.has(k));
+  if (dimension === "date") return [...present].sort(newestFirst);
+  return [...present].sort((a, b) => a.localeCompare(b)); // language
+}
+
+function renderProjects(dimension) {
+  const root = document.getElementById("projects-root");
+  root.innerHTML = "";
+
+  for (const key of getGroupKeys(dimension)) {
+    const group = projects
+      .filter((p) => p.categories[dimension] === key)
+      .sort((a, b) => newestFirst(a.categories.date, b.categories.date));
+    const wrapper = document.createElement("div");
+    wrapper.className = "project-group";
+    const title = document.createElement("h2");
+    title.textContent = SORTS[dimension].titles[key] ?? key;
+    const grid = document.createElement("div");
+    grid.className = "project-grid";
+    renderSection(grid, group);
+    wrapper.append(title, grid);
+    root.appendChild(wrapper);
+  }
+}
+
+//Dropdown:
+const sortSelect = document.getElementById("sort-select");
+let savedSort = null;
+try { savedSort = localStorage.getItem("sortBy"); } catch (e) {}
+if (savedSort && SORTS[savedSort]) sortSelect.value = savedSort;
+sortSelect.addEventListener("change", () => {
+  try { localStorage.setItem("sortBy", sortSelect.value); } catch (e) {}
+  renderProjects(sortSelect.value);
+});
+
+//Render projects:
+renderProjects(sortSelect.value);
 Promise.all(coverPromises).then(warmUpSecondImages);

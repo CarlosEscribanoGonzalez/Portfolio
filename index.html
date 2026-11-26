@@ -21,32 +21,18 @@
     <p>I hope you enjoy my projects!</p>
   </section>
 
-  <!-- FEATURED PROJECTS -->
-  <section class="section" id="featured">
-    <h2>Featured projects</h2>
-    <div class="project-grid" id="featured-grid">
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="sort-bar">
+      <label for="sort-select">Sort by</label>
+      <select id="sort-select">
+        <option value="academic">Academic</option>
+        <option value="language">Programming language</option>
+        <option value="type">Type</option>
+        <option value="date">Date</option>
+      </select>
     </div>
-  </section>
-
-   <!-- MASTER PROJECTS -->
-  <section class="section" id="master">
-    <h2>Master's Degree projects</h2>
-    <div class="project-grid" id="master-grid">
-    </div>
-  </section>
-
-  <!-- JAMS PROJECTS -->
-  <section class="section" id="jams">
-    <h2>Game jam projects</h2>
-    <div class="project-grid" id="jams-grid">
-    </div>
-  </section>
-
-  <!-- DEGREE PROJECTS -->
-  <section class="section" id="degree">
-    <h2>Bachelor's Degree projects</h2>
-    <div class="project-grid" id="degree-grid">
-    </div>
+    <div id="projects-root"></div>
   </section>
 
   <section class="section" id="contact">

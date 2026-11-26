@@ -49,6 +49,10 @@ body { margin: 0; font-family: sans-serif; }
   right: auto;
 }
 .project-badge.hidden { opacity: 0; }
+.project-group + .project-group { margin-top: 2.5rem; }
+
+.sort-bar { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+.sort-bar select { padding: 0.4rem 0.7rem; border-radius: 6px; font: inherit; }
 
 .empty-note { color: #999; font-style: italic; }
 
