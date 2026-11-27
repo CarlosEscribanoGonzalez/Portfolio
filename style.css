@@ -98,6 +98,13 @@ body { margin: 0; font-family: sans-serif; }
 
 body.modal-open { overflow: hidden; }
 
+.modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.9rem 0; }
+.tag { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; color: #fff; }
+.tag-academic { background: #6c5ce7; }
+.tag-type     { background: #0b8a8a; }
+.tag-language { background: #d35400; }
+.tag-date     { background: #726f63; }
+
 .gallery { position: relative; margin: 16px 0; }
 #modal-image { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; display: block; }
 

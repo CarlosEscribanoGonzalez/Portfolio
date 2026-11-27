@@ -218,6 +218,7 @@ async function openProjectModal(projectId) {
   document.getElementById("modal-subtitle").textContent = p.subtitle;
   document.getElementById("modal-description").innerHTML = p.description;
   document.getElementById("modal-image").alt = p.title;
+  renderModalTags(p);
 
   const fields = TEMPLATES[p.template] || Object.keys(p.details || {});
   document.getElementById("modal-details").innerHTML = fields
@@ -283,6 +284,17 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("gallery-prev").addEventListener("click", () => showGalleryImage(gallery.index - 1));
 document.getElementById("gallery-next").addEventListener("click", () => showGalleryImage(gallery.index + 1));
 
+//Modal tags:
+const TAG_DIMENSIONS = ["academic", "type", "language", "date"];
+function renderModalTags(p) {
+  document.getElementById("modal-tags").innerHTML = TAG_DIMENSIONS
+    .flatMap((dim) => [].concat(p.categories[dim]).map((value) => {
+      const label = SORTS[dim].titles[value] ?? value;
+      return `<span class="tag tag-${dim}">${label}</span>`;
+    }))
+    .join("");
+}
+
 //Project validation:
 function validateProjects() {
   for (const p of projects) {
@@ -300,12 +312,12 @@ const IN_PROGRESS = "in active development";
 const SORTS = {
   academic: {
     order: ["featured", "master", "jams", "degree"],
-    titles: { featured: "Featured", master: "Master's Degree", jams: "Game jams", degree: "Bachelor's Degree" },
+    titles: { featured: "Featured", master: "Master's Degree", jams: "Game Jams", degree: "Bachelor's Degree" },
   },
   type: {
     order: ["game", "app", "graphics", "simulation", "other"],
     titles: { game: "Games", app: "Apps", graphics: "Graphics",
-              simulation: "Physics & Simulation", other: "Other software" },
+              simulation: "Physics & Simulation", other: "Other Software" },
   },
   language: { order: null, titles: {} },
   date:     { order: null, titles: {} },
