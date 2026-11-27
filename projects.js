@@ -55,7 +55,7 @@ const projects = [
       "My Role": "Game Designer, Gameplay/UI Programmer & Shader Artist"
     },
     links: [
-      { label: "Play", url: "https://typtyp-studios.itch.io/mechanoccult" }
+      { label: "View on Itch.io", url: "https://typtyp-studios.itch.io/mechanoccult" }
     ],
     badge: "unity.png",
   },
@@ -88,7 +88,7 @@ const projects = [
       Technologies: "Whisper (STT), Gemini (LLM), ElevenLabs (TTS)"
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/la-cacharrera" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/la-cacharrera" }
     ],
     badge: "unity.png",
   },
@@ -120,7 +120,7 @@ const projects = [
       "Programming Language": "C#",
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/patterns" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/patterns" }
     ],
     badge: "unity.png",
   },
@@ -170,7 +170,7 @@ const projects = [
       type: "graphics",
       date: "2026"
     },
-    title: "Rendering techniques",
+    title: "Rendering Techniques",
     subtitle: "Real-time rendering techiques in Vulkan on a deferred pipeline",
     description:
       `Implementation of several core features commonly found in real-time rendering engines using C++ and the Vulkan graphics API. 
@@ -242,7 +242,7 @@ const projects = [
       type: "graphics",
       date: "2026"
     },
-    title: "Graphics Pipeline Stages in Unity",
+    title: "Graphics Pipeline Stages",
     subtitle: "Geometry, tessellation and compute shaders in Unity",
     description:
       `Unity project (Built-in Render Pipeline) built to explore the different stages of the graphics pipeline in HLSL, 
@@ -301,7 +301,7 @@ const projects = [
       type: "simulation",
       date: "2026"
     },
-    title: "Articulated Rigid Bodies in Unity",
+    title: "Articulated Rigid Bodies",
     subtitle: "Simulation of articulated rigid bodies connected through point constraints in Unity",
     description:
       `Simulation of articulated rigid bodies in Unity (C#), where rigid bodies are connected through point constraints. 
@@ -331,7 +331,7 @@ const projects = [
       type: "graphics",
       date: "2026"
     },
-    title: "Path Tracer with Nori",
+    title: "Nori Path Tracer",
     subtitle: "Path tracing techniques implemented in C++ with Nori",
     description:
       `CPU path tracer developed in C++ on top of the Nori educational rendering framework, implementing and studying 
@@ -405,7 +405,7 @@ const projects = [
       type: "other",
       date: "2025"
     },
-    title: "Tracking and Stereoscopy",
+    title: "Tracking & Stereoscopy",
     subtitle: "Tracking and stereoscopy in C++ using ArUco libraries",
     description:
       `Marker-based tracking and stereoscopic rendering project written in C++ with OpenGL, OpenCV and ArUco. 
@@ -431,7 +431,7 @@ const projects = [
       type: "graphics",
       date: "2026"
     },
-    title: "Box-Filtering in CUDA",
+    title: "Paralell Box-Filtering",
     subtitle: "GPU image box-filtering project implemented in C++ with CUDA",
     description:
       `GPU image box-filtering project written in CUDA. It applies convolution filters to images and chains several kernels to build a 
@@ -456,7 +456,7 @@ const projects = [
       type: "graphics",
       date: "2026"
     },
-    title: "Tone Mapping in CUDA",
+    title: "Paralell Tone Mapping",
     subtitle: "Parallel image tone mapping with CUDA",
     description:
       `GPU implementation of the histogram-based stage of HDR tone mapping, written in CUDA. 
@@ -480,7 +480,7 @@ const projects = [
       type: "other",
       date: "2025"
     },
-    title: "Warping and Morphing",
+    title: "Warping & Morphing",
     subtitle: "Image warping and morphing in MATLAB",
     description:
       `Three MATLAB scripts written to understand the fundamentals of image warping. Each script implements a different technique, 
@@ -579,7 +579,7 @@ const projects = [
       "Programming Language": "C#",
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/the-other-side" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/the-other-side" }
     ],
     badge: "unity.png",
   },
@@ -612,7 +612,7 @@ const projects = [
       "My Role": "Lead Programmer & Lead Narrative Designer"
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/regrets-n-complaints" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/regrets-n-complaints" }
     ],
     badge: "unity.png",
   },
@@ -628,11 +628,11 @@ const projects = [
     subtitle: "My very first Unity project",
     description:
       `<b>Kuko</b> is a 2D pixel art platformer where the player controls a baby dragon lost in a cave inhabited 
-      by evil humans who want to hunt him.
+      by evil humans who want to hunt him down.
       <br><br>This game is my first project in Unity, which allowed me to learn the engine's most basic aspects on my own.`,
     template: "Games",
     details: {
-      Language: "Spanish",
+      Language: "English",
       Genre: "Platformer",
       "Release Date": "October 18, 2022",
       "Jam Duration": "18 days",
@@ -643,7 +643,7 @@ const projects = [
       "My Role": "Lead Programmer"
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/kuko" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/kuko" }
     ],
     badge: "unity.png",
   },
@@ -673,7 +673,7 @@ const projects = [
       "My Role": "Programmer & Narrative Designer"
     },
     links: [
-      { label: "Play", url: "https://guajiro0.itch.io/julian" }
+      { label: "View on Itch.io", url: "https://guajiro0.itch.io/julian" }
     ],
     badge: "ags.png",
   },
@@ -708,7 +708,7 @@ const projects = [
       "My Role": "Lead Programmer & Narrative Designer"
     },
     links: [
-      { label: "Play", url: "https://flatwall-games.itch.io/kocube" }
+      { label: "Play on Itch.io", url: "https://flatwall-games.itch.io/kocube" }
     ],
     badge: "unity.png",
   },
@@ -740,7 +740,7 @@ const projects = [
       "My Role": "Programmer & Technical Artist (shaders & VFX)"
     },
     links: [
-      { label: "Play", url: "https://flatwall-games.itch.io/indie-studio-simulator" }
+      { label: "View on Itch.io", url: "https://flatwall-games.itch.io/indie-studio-simulator" }
     ],
     badge: "unity.png",
   },
@@ -770,7 +770,7 @@ const projects = [
       Frameworks: "XR Interaction Toolkit"
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/cuestin-de-pinos" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/cuestin-de-pinos" }
     ],
     badge: "unity.png",
   },
@@ -805,7 +805,7 @@ const projects = [
       "My Role": "Programmer, Technical Artist (shaders) & AR Integration"
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/skyline-express-totally-accurate-and-reliable-flying-train-service-simulator" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/skyline-express-totally-accurate-and-reliable-flying-train-service-simulator" }
     ],
     badge: "unity.png",
   },
@@ -827,7 +827,7 @@ const projects = [
       built with the <i>Netcode for GameObjects</i> framework and <i>Unity Relay</i>, using a listen server architecture.`,
     template: "Games",
     details: {
-      Language: "Spanish",
+      Language: "English",
       Genre: "Racing",
       "Release Date": "May 13, 2024",
       Platform: "PC",
@@ -836,7 +836,7 @@ const projects = [
       Frameworks: "Netcode for GameObjects"
     },
     links: [
-      { label: "Play", url: "https://karesito.itch.io/missile-rally" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/missile-rally" }
     ],
     badge: "unity.png",
   },
@@ -1006,8 +1006,8 @@ const projects = [
       type: "simulation",
       date: "2021"
     },
-    title: "Physics in Processing",
-    subtitle: "Physics calculations in computers using Processing",
+    title: "Physics Simulations",
+    subtitle: "Set of physics simulations using Processing",
     description:
       `Collection of physics simulations for the course Physics in Video Games, implemented in Processing (Java mode). 
       Each sketch focuses on a different family of techniques: numerical integration, mass-spring systems, 
