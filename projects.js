@@ -18,7 +18,7 @@
 *   folder?: string,
 *   description: string,
 *   links?: { label: string, url: string }[],
-*   badge?: string,
+*   badge: string,
 *   badgePosition?: "left" | "bottom-left" | "bottom"
 * } & TemplateDetails} Project
 */
@@ -268,80 +268,6 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  { //PATH TRACER
-    id: "path-tracer",
-    categories: {
-      academic: "master",
-      language: "C++",
-      type: "graphics",
-      date: "2026"
-    },
-    title: "Path Tracer with Nori",
-    subtitle: "Path tracing techniques implemented in C++ with Nori",
-    description:
-      `CPU path tracer developed in C++ on top of the Nori educational rendering framework, implementing and studying 
-      Monte Carlo techniques for physically based rendering and global illumination. The project was developed incrementally, 
-      from sampling and direct lighting to a full path tracer with next-event estimation, multiple importance sampling and microfacet materials.`,
-    template: "Graphics",
-    details: {
-      "Programming Language": "C++",
-      "Date": "March 24, 2026",
-      Technologies: "Nori",
-    },
-    links: [
-      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Nori-Path-Tracer" }
-    ],
-    badge: "c++.png",
-  },
-  { //FLUID SIMULATION
-    id: "fluid-simulation",
-    categories: {
-      academic: "master",
-      language: "C++",
-      type: "simulation",
-      date: "2026"
-    },
-    title: "Eulerian Fluid Simulation",
-    subtitle: "2D simulation of an eulerian fluid (gas) in C++",
-    description:
-      `Implementation of a 2D eulerian fluid simulator that solves the incompressible Navier-Stokes equations on a staggered (MAC) grid, 
-      written in C++. Each time step handles the terms of the equations one at a time: advection, external forces, viscosity and a 
-      pressure projection that makes the fluid incompressible. Colored ink is advected along the fluid to visualize the flow.`,
-    template: "Software",
-    details: {
-      "Programming Language": "C++",
-      "Date": "March 29, 2026",
-    },
-    links: [
-      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation" }
-    ],
-    badge: "c++.png",
-  },
-  { //BOX FILTERING
-    id: "box-filtering",
-    categories: {
-      academic: "master",
-      language: "C++",
-      type: "graphics",
-      date: "2026"
-    },
-    title: "Box-Filtering in CUDA",
-    subtitle: "GPU image box-filtering project implemented in C++ with CUDA",
-    description:
-      `GPU image box-filtering project written in CUDA. It applies convolution filters to images and chains several kernels to build a 
-      complete Canny Edge Detector, with support for individual filters. It's also used to measure how techniques such as constant memory, 
-      shared memory and block size affect performance.`,
-    template: "Graphics",
-    details: {
-      "Programming Language": "C++",
-      "Date": "April 27, 2026",
-      Technologies: "CUDA"
-    },
-    links: [
-      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA" }
-    ],
-    badge: "cuda.png",
-  },
   { //CLOTH SIMULATION
     id: "cloth-simulation",
     categories: {
@@ -397,6 +323,55 @@ const projects = [
     ],
     badge: "unity.png",
   },
+  { //PATH TRACER
+    id: "path-tracer",
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
+    title: "Path Tracer with Nori",
+    subtitle: "Path tracing techniques implemented in C++ with Nori",
+    description:
+      `CPU path tracer developed in C++ on top of the Nori educational rendering framework, implementing and studying 
+      Monte Carlo techniques for physically based rendering and global illumination. The project was developed incrementally, 
+      from sampling and direct lighting to a full path tracer with next-event estimation, multiple importance sampling and microfacet materials.`,
+    template: "Graphics",
+    details: {
+      "Programming Language": "C++",
+      "Date": "March 24, 2026",
+      Technologies: "Nori",
+    },
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Nori-Path-Tracer" }
+    ],
+    badge: "c++.png",
+  },
+  { //FLUID SIMULATION
+    id: "fluid-simulation",
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "simulation",
+      date: "2026"
+    },
+    title: "Eulerian Fluid Simulation",
+    subtitle: "2D simulation of an eulerian fluid (gas) in C++",
+    description:
+      `Implementation of a 2D eulerian fluid simulator that solves the incompressible Navier-Stokes equations on a staggered (MAC) grid, 
+      written in C++. Each time step handles the terms of the equations one at a time: advection, external forces, viscosity and a 
+      pressure projection that makes the fluid incompressible. Colored ink is advected along the fluid to visualize the flow.`,
+    template: "Software",
+    details: {
+      "Programming Language": "C++",
+      "Date": "March 29, 2026",
+    },
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation" }
+    ],
+    badge: "c++.png",
+  },
   { //ALGORITHMS WITH MESHES
     id: "algorithms-meshes",
     categories: {
@@ -421,6 +396,81 @@ const projects = [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Algorithms-with-meshes" }
     ],
     badge: "c++.png",
+  },
+  { //TRACKING AND STEREOSCOPY
+    id: "tracking-stereoscopy",
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "other",
+      date: "2025"
+    },
+    title: "Tracking and Stereoscopy",
+    subtitle: "Tracking and stereoscopy in C++ using ArUco libraries",
+    description:
+      `Marker-based tracking and stereoscopic rendering project written in C++ with OpenGL, OpenCV and ArUco. 
+      ArUco markers are detected by the webcam and tracked to control the position and rotation of the virtual camera. 
+      <br><br>
+      The scene can be rendered in stereo using two different methods, <i>toe-in</i> and <i>off-axis</i>, with red/blue anaglyph filters.`,
+    template: "Software",
+    details: {
+      "Programming Language": "C++",
+      "Date": "November 30, 2025",
+      Technologies: "OpenCV, ArUco, OpenGL"
+    },
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy" }
+    ],
+    badge: "c++.png",
+  },
+  { //BOX FILTERING
+    id: "box-filtering",
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
+    title: "Box-Filtering in CUDA",
+    subtitle: "GPU image box-filtering project implemented in C++ with CUDA",
+    description:
+      `GPU image box-filtering project written in CUDA. It applies convolution filters to images and chains several kernels to build a 
+      complete Canny Edge Detector, with support for individual filters. It's also used to measure how techniques such as constant memory, 
+      shared memory and block size affect performance.`,
+    template: "Graphics",
+    details: {
+      "Programming Language": "C++",
+      "Date": "April 27, 2026",
+      Technologies: "CUDA"
+    },
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Image-box-filtering-in-CUDA" }
+    ],
+    badge: "cuda.png",
+  },
+  { //TONEMAPPING 
+    id: "tonemapping-cuda",
+    categories: {
+      academic: "master",
+      language: "C++",
+      type: "graphics",
+      date: "2026"
+    },
+    title: "Tone Mapping in CUDA",
+    subtitle: "Parallel image tone mapping with CUDA",
+    description:
+      `GPU implementation of the histogram-based stage of HDR tone mapping, written in CUDA. 
+      Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
+    template: "Graphics",
+    details: {
+      "Programming Language": "C++",
+      "Date": "April 13, 2026",
+      Technologies: "CUDA"
+    },
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA" }
+    ],
+    badge: "cuda.png",
   },
   { //WARPING AND MORPHING
     id: "warping-morphing",
@@ -501,56 +551,6 @@ const projects = [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Emoji-Classification-CNN" }
     ],
     badge: "python.png",
-  },
-  { //TRACKING AND STEREOSCOPY
-    id: "tracking-stereoscopy",
-    categories: {
-      academic: "master",
-      language: "C++",
-      type: "other",
-      date: "2025"
-    },
-    title: "Tracking and Stereoscopy",
-    subtitle: "Tracking and stereoscopy in C++ using ArUco libraries",
-    description:
-      `Marker-based tracking and stereoscopic rendering project written in C++ with OpenGL, OpenCV and ArUco. 
-      ArUco markers are detected by the webcam and tracked to control the position and rotation of the virtual camera. 
-      <br><br>
-      The scene can be rendered in stereo using two different methods, <i>toe-in</i> and <i>off-axis</i>, with red/blue anaglyph filters.`,
-    template: "Software",
-    details: {
-      "Programming Language": "C++",
-      "Date": "November 30, 2025",
-      Technologies: "OpenCV, ArUco, OpenGL"
-    },
-    links: [
-      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tracking-Stereoscopy" }
-    ],
-    badge: "c++.png",
-  },
-  { //TONEMAPPING 
-    id: "tonemapping-cuda",
-    categories: {
-      academic: "master",
-      language: "C++",
-      type: "graphics",
-      date: "2026"
-    },
-    title: "Tone Mapping in CUDA",
-    subtitle: "Parallel image tone mapping with CUDA",
-    description:
-      `GPU implementation of the histogram-based stage of HDR tone mapping, written in CUDA. 
-      Given the log-luminance of an image, it computes the cumulative distribution function (CDF) used to remap luminance values.`,
-    template: "Graphics",
-    details: {
-      "Programming Language": "C++",
-      "Date": "April 13, 2026",
-      Technologies: "CUDA"
-    },
-    links: [
-      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Tone-Mapping-in-CUDA" }
-    ],
-    badge: "cuda.png",
   },
 
   //JAMS:
@@ -744,36 +744,6 @@ const projects = [
     ],
     badge: "unity.png",
   },
-  { //TINPCT
-    id: "tinpct",
-    categories: {
-      academic: "degree",
-      language: "JavaScript",
-      type: "game",
-      date: "2024"
-    },
-    title: "Trouble in NPC Town",
-    subtitle: "Asymmetric 2-player online browser game made with Phaser",
-    description:
-      `Asymmetric 2-player browser game made with Phaser, where one player pretends to be an NPC and the other has to find and shoot them. 
-      The game uses a Spring Boot server with a <b>REST API</b> for user accounts and <b>WebSockets</b> for the real-time game logic.`,
-    template: "Games",
-    details: {
-      "Language": "English",
-      "Genre": "Hide-and-seek",
-      "Programming Language": "JavaScript, Java",
-      "Release Date": "January 24, 2024",
-      Platform: "Web (PC)",
-      Frameworks: "Phaser, Spring Boot",
-      "Team Size": "3",
-      "My Role": "Gameplay Programmer, Backend Developer & WebSocket Developer"
-    },
-    links: [
-      { label: "View on GitHub (online version)", url: "https://github.com/CarlosEscribanoGonzalez/Trouble-in-NPC-Town" },
-      { label: "Play on Itch.io (offline version)", url: "https://karesito.itch.io/trouble-in-npc-town" }
-    ],
-    badge: "phaser.png",
-  },
   { //CUESTION DE PINOS
     id: "cuestion-de-pinos",
     categories: {
@@ -897,6 +867,59 @@ const projects = [
     ],
     badge: "unity.png",
   },
+  { //TINPCT
+    id: "tinpct",
+    categories: {
+      academic: "degree",
+      language: "JavaScript",
+      type: "game",
+      date: "2024"
+    },
+    title: "Trouble in NPC Town",
+    subtitle: "Asymmetric 2-player online browser game made with Phaser",
+    description:
+      `Asymmetric 2-player browser game made with Phaser, where one player pretends to be an NPC and the other has to find and shoot them. 
+      The game uses a Spring Boot server with a <b>REST API</b> for user accounts and <b>WebSockets</b> for the real-time game logic.`,
+    template: "Games",
+    details: {
+      "Language": "English",
+      "Genre": "Hide-and-seek",
+      "Programming Language": "JavaScript, Java",
+      "Release Date": "January 24, 2024",
+      Platform: "Web (PC)",
+      Frameworks: "Phaser, Spring Boot",
+      "Team Size": "3",
+      "My Role": "Gameplay Programmer, Backend Developer & WebSocket Developer"
+    },
+    links: [
+      { label: "View on GitHub (online version)", url: "https://github.com/CarlosEscribanoGonzalez/Trouble-in-NPC-Town" },
+      { label: "Play on Itch.io (offline version)", url: "https://karesito.itch.io/trouble-in-npc-town" }
+    ],
+    badge: "phaser.png",
+  },
+  { //GAME OF LIFE
+    id: "gameoflife",
+    categories: {
+      academic: "degree",
+      language: "JavaScript",
+      type: "game",
+      date: "2022"
+    },
+    title: "Game of Life",
+    subtitle: "Own implementation of Conway's Game of Life in JavaScript",
+    description:
+      `Interactive implementation of John Conway's Game of Life in JavaScript, drawn on an HTML canvas. The world is a square 
+      grid of cells that live or die in each step according to the number of living neighbors they have.`,
+    template: "Games",
+    details: {
+      "Programming Language": "JavaScript",
+      "Release Date": "December 03, 2022",
+    },
+    links: [
+      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
+    ],
+    badge: "javascript.png",
+  },
   { //SPACE INVADERS
     id: "space-invaders",
     categories: {
@@ -921,29 +944,6 @@ const projects = [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Space-Invaders-in-Own-Game-Engine" }
     ],
     badge: "c++.png",
-  },
-  { //GAME OF LIFE
-    id: "gameoflife",
-    categories: {
-      academic: "degree",
-      language: "JavaScript",
-      type: "game",
-      date: "2022"
-    },
-    title: "Game of Life",
-    subtitle: "Own implementation of Conway's Game of Life in JavaScript",
-    description:
-      `Interactive implementation of John Conway's Game of Life in JavaScript, drawn on an HTML canvas. The world is a square 
-      grid of cells that live or die in each step according to the number of living neighbors they have.`,
-    template: "Games",
-    details: {
-      "Programming Language": "JavaScript",
-      "Release Date": "December 03, 2022",
-    },
-    links: [
-      { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
-    ],
-    badge: "javascript.png",
   },
   { //ARKANOID
     id: "arkanoid",

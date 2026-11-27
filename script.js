@@ -315,6 +315,39 @@ function dateRank(value) {
 }
 const newestFirst = (a, b) => dateRank(b) - dateRank(a);
 
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+
+function detailDate(p) {
+  if (p.categories.date.trim().toLowerCase() === IN_PROGRESS) return Infinity;
+  const text = String(p.details?.["Release Date"] ?? p.details?.["Date"] ?? "");
+  const year = text.match(/\b(20\d{2})\b/);
+  if (!year) return 0;
+
+  const lower = text.toLowerCase();
+  let month = MONTHS.findIndex((m) => lower.includes(m)) + 1;
+
+  if (!month) {
+    const mmYyyy = text.match(/(0?[1-9]|1[0-2])[\/.-](?=20\d{2})/);
+    const yyyyMm = text.match(/20\d{2}[\/.-](0?[1-9]|1[0-2])/);
+    month = Number((mmYyyy || yyyyMm || [0, 0])[1]);
+  }
+
+  return Number(year[1]) * 12 + month;
+}
+
+const BADGE_HEAD = ["unity", "c++", "cuda", "phaser", "javascript"];
+const BADGE_TAIL = ["assembly", "ags"];
+function badgeRank(p) {
+  const name = String(p.badge ?? "").replace(/\.\w+$/, "").toLowerCase();
+  const find = (list) => list.findIndex((aliases) => [].concat(aliases).some((a) => name.includes(a)));
+  const head = find(BADGE_HEAD);
+  if (head !== -1) return head;
+  const tail = find(BADGE_TAIL);
+  if (tail !== -1) return 1000 + tail;
+  return 100;
+}
+const byBadgeThenDate = (a, b) => badgeRank(a) - badgeRank(b) || detailDate(b) - detailDate(a);
+
 function getGroupKeys(dimension) {
   const { order } = SORTS[dimension];
   const present = new Set(projects.map((p) => p.categories[dimension]));
@@ -329,9 +362,9 @@ function renderProjects(dimension) {
   root.innerHTML = "";
 
   for (const key of getGroupKeys(dimension)) {
-    const group = projects
-      .filter((p) => p.categories[dimension] === key)
-      .sort((a, b) => newestFirst(a.categories.date, b.categories.date));
+    const group = projects.filter((p) => p.categories[dimension] === key);
+    if (dimension === "date") group.sort((a, b) => detailDate(b) - detailDate(a));
+    else if (dimension === "language" || dimension === "type") group.sort(byBadgeThenDate);
     const wrapper = document.createElement("div");
     wrapper.className = "project-group";
     const title = document.createElement("h2");
