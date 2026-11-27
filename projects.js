@@ -846,7 +846,7 @@ const projects = [
       academic: "degree",
       language: "C#",
       type: "other",
-      date: "2024"
+      date: "2023"
     },
     title: "Pathfinding & Reinforcement Learning",
     subtitle: "Q-Learning, A* and Horizon Search in Unity",
@@ -859,7 +859,7 @@ const projects = [
     template: "Software",
     details: {
       "Programming Language": "C#",
-      "Date": "January 19, 2024",
+      "Date": "December 19, 2023",
       Technologies: "Unity"
     },
     links: [
@@ -873,7 +873,7 @@ const projects = [
       academic: "degree",
       language: "JavaScript",
       type: "game",
-      date: "2024"
+      date: "2023"
     },
     title: "Trouble in NPC Town",
     subtitle: "Asymmetric 2-player online browser game made with Phaser",
@@ -885,7 +885,7 @@ const projects = [
       "Language": "English",
       "Genre": "Hide-and-seek",
       "Programming Language": "JavaScript, Java",
-      "Release Date": "January 24, 2024",
+      "Release Date": "December 24, 2023",
       Platform: "Web (PC)",
       Frameworks: "Phaser, Spring Boot",
       "Team Size": "3",

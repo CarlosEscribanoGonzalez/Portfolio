@@ -315,24 +315,9 @@ function dateRank(value) {
 }
 const newestFirst = (a, b) => dateRank(b) - dateRank(a);
 
-const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
-
 function detailDate(p) {
   if (p.categories.date.trim().toLowerCase() === IN_PROGRESS) return Infinity;
-  const text = String(p.details?.["Release Date"] ?? p.details?.["Date"] ?? "");
-  const year = text.match(/\b(20\d{2})\b/);
-  if (!year) return 0;
-
-  const lower = text.toLowerCase();
-  let month = MONTHS.findIndex((m) => lower.includes(m)) + 1;
-
-  if (!month) {
-    const mmYyyy = text.match(/(0?[1-9]|1[0-2])[\/.-](?=20\d{2})/);
-    const yyyyMm = text.match(/20\d{2}[\/.-](0?[1-9]|1[0-2])/);
-    month = Number((mmYyyy || yyyyMm || [0, 0])[1]);
-  }
-
-  return Number(year[1]) * 12 + month;
+  return Date.parse(p.details?.["Release Date"] ?? p.details?.["Date"]) || 0;
 }
 
 const BADGE_HEAD = ["unity", "c++", "cuda", "phaser", "javascript"];
