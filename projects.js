@@ -44,9 +44,9 @@ const projects = [
     template: "Games",
       details: {
       Language: "English",
-      Genre: "Competitive Typing, Deck-Builder",
+      Genre: "Competitive typing, Deck-builder",
       Status: "In active development",
-      Platform: "PC",
+      Platform: "Windows & Linux",
       Engine: "Unity",
       "Programming Language": "C#",
       Frameworks: "Netcode for GameObjects",
@@ -82,7 +82,7 @@ const projects = [
       Language: "Spanish",
       Genre: "Simulation",
       "Release Date": "July 21, 2026",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
       Technologies: "Whisper (STT), Gemini (LLM), ElevenLabs (TTS)"
@@ -115,7 +115,7 @@ const projects = [
       Language: "Spanish",
       Genre: "Escape Room",
       "Release Date": "January 19, 2026",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
     },
@@ -158,7 +158,7 @@ const projects = [
       Frameworks: "ARCore, AR Foundation",
     },
     links: [
-      { label: "Download", url: "https://karesito.itch.io/artabletop" }
+      { label: "View on Itch.io", url: "https://karesito.itch.io/artabletop" }
     ],
     badge: "unity.png",
   },
@@ -366,6 +366,7 @@ const projects = [
     details: {
       "Programming Language": "C++",
       "Date": "March 29, 2026",
+      Technologies: "PCG Solver"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Eulerian-Fluid-Simulation" }
@@ -574,7 +575,7 @@ const projects = [
       "Release Date": "October 27, 2024",
       "Jam Duration": "20 days",
       "Ranking Obtained": "Third",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
     },
@@ -605,7 +606,7 @@ const projects = [
       "Jam Duration": "15 days",
       "Ranking Obtained": "Second",
       "Showcased At": "Indie Dev Day 2024",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
       "Team Size": "5",
@@ -636,7 +637,7 @@ const projects = [
       Genre: "Platformer",
       "Release Date": "October 18, 2022",
       "Jam Duration": "18 days",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
       "Team Size": "4",
@@ -667,7 +668,7 @@ const projects = [
       Genre: "Graphic Adventure",
       "Release Date": "February 08, 2022",
       "Jam Duration": "3 days",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Adventure Game Studio",
       "Team Size": "4",
       "My Role": "Programmer & Narrative Designer"
@@ -733,7 +734,7 @@ const projects = [
       Language: "English",
       Genre: "Simulation",
       "Release Date": "December 18, 2024",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
       "Team Size": "5",
@@ -764,7 +765,7 @@ const projects = [
       Language: "Spanish",
       Genre: "Virtual Reality, Interactive Story",
       "Release Date": "May 23, 2024",
-      Platform: "PC (VR)",
+      Platform: "Windows (VR)",
       Engine: "Unity",
       "Programming Language": "C#",
       Frameworks: "XR Interaction Toolkit"
@@ -830,7 +831,7 @@ const projects = [
       Language: "English",
       Genre: "Racing",
       "Release Date": "May 13, 2024",
-      Platform: "PC",
+      Platform: "Windows",
       Engine: "Unity",
       "Programming Language": "C#",
       Frameworks: "Netcode for GameObjects"
@@ -902,7 +903,7 @@ const projects = [
     categories: {
       academic: "degree",
       language: "JavaScript",
-      type: "game",
+      type: "other",
       date: "2022"
     },
     title: "Game of Life",
@@ -910,10 +911,11 @@ const projects = [
     description:
       `Interactive implementation of John Conway's Game of Life in JavaScript, drawn on an HTML canvas. The world is a square 
       grid of cells that live or die in each step according to the number of living neighbors they have.`,
-    template: "Games",
+    template: "Software",
     details: {
       "Programming Language": "JavaScript",
-      "Release Date": "December 03, 2022",
+      "Date": "December 03, 2022",
+      Technologies: "HTML5"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Game-Of-Life" }
@@ -936,8 +938,13 @@ const projects = [
       fixed-timestep game loop, while the game itself is implemented as a set of scripts that use it.`,
     template: "Games",
     details: {
+      "Language": "English",
+      "Genre": "Shoot 'em up",
       "Programming Language": "C++",
       "Release Date": "November 23, 2022",
+      "Platform": "PC (cross-platform)",
+      Engine: "Custom engine (C++)",
+      Technologies: "OpenGL, GLUT, GLEW",
       "Team Size": "2"
     },
     links: [
@@ -958,10 +965,13 @@ const projects = [
     description:
       `Simplified Arkanoid clone written in MIPS assembly for the MARS 4.5 simulator. The game is drawn on the Bitmap 
       Display and controlled through the Keyboard and Display MMIO Simulator.`,
-    template: "Software",
+    template: "Games",
     details: {
+      "Genre": "Arcade",
       "Programming Language": "Assembly",
-      "Date": "May 23, 2023",
+      "Release Date": "May 23, 2023",
+      Platform: "PC (cross-platform)",
+      Technologies: "MARS 4.5 (MIPS simulator)"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Arkanoid-in-Assembly" }
@@ -1016,6 +1026,7 @@ const projects = [
     details: {
       "Programming Language": "Processing",
       "Date": "December 12, 2021",
+      Technologies: "Processing 4.5"
     },
     links: [
       { label: "View on GitHub", url: "https://github.com/CarlosEscribanoGonzalez/Physics-in-Processing" }
